@@ -37,11 +37,11 @@
                         <input type="text"  class="form-control" id="duration" name="duration" value="" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label for="department" class="text-dark mt-2 form-label">Start Date</label>
+                        <label for="start_Date" class="text-dark mt-2 form-label">Start Date</label>
                         <input type="text"  class="form-control" id="start_date" name="start_date" value="" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label for="usertype" class="text-dark mt-2 form-label">End Date</label>
+                        <label for="end_date" class="text-dark mt-2 form-label">End Date</label>
                         <input type="text"  class="form-control" id="end_date" name="end_date" value="" readonly>
                     </div>
                 </div>
