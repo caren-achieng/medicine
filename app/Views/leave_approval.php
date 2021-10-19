@@ -34,15 +34,15 @@
                     </div>
                     <div class="col-md-6">
                         <label for="duration" class="text-dark mt-2 form-label">Duration</label>
-                        <input type="text"  class="form-control" id="duration" name="duration" value="demo" readonly>
+                        <input type="text"  class="form-control" id="duration" name="duration" value="" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="department" class="text-dark mt-2 form-label">Start Date</label>
-                        <input type="text"  class="form-control" id="start_date" name="start_date" value="demo" readonly>
+                        <input type="text"  class="form-control" id="start_date" name="start_date" value="" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="usertype" class="text-dark mt-2 form-label">End Date</label>
-                        <input type="text"  class="form-control" id="end_date" name="end_date" value="demo" readonly>
+                        <input type="text"  class="form-control" id="end_date" name="end_date" value="" readonly>
                     </div>
                 </div>
                 <div class="row">
