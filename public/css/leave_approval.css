@@ -2,72 +2,41 @@ body{
     margin:0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #7d2ae8, #71b7e6, #9b59b6);
+    background: #7d2ae8;
 }
-
-.details{
-    width: 100%;
-    padding: 20px;
-    padding-top: 0;
-    display: grid;
-    grid-template-columns: 2fr,1fr;
-    margin-left: 200px;
-    margin-top: 70px;
-    width: 75%;
-    background-image: url('/../images/background.svg');
-}
-.details .leaveDetails{
-    position: relative;
-    display: block;
-    min-height: 530px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.274);
-}
-.cardHeader{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.cardHeader h2{
-    font-weight: 600;
-
-}
-.employee{
-    padding-top: 20px;
-    margin-bottom: -10px;
-}
-.admin_input{
-    height: 20px;
-    font-size: 18px;
-    margin: 20px;
-    border: none;
-    outline: none;
-    background: none;
-}
-#name{
-   margin-left: 69px;
-}
-#department{
-    margin-left: 28px;
-}
-#leave_type{
-    margin-left: 33px;
-}
-#start_date {
-    margin-left: 42px;
-}
-#duration {
-    margin-left: 51px;
-}
-.button{
-    top: 50%;
-    bottom: 50%;
-    transform: translate(40%, 50%);
+form.row{
     margin-top: 20px;
+}
+.form h1{
+    text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid silver;
+    color:white;
+}
+.form form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .txtfield{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.form{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: white;
+    border-radius: 15px;
 }
 .btn{
     height: 30px;
     width: 100px;
-    text-align: center;;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
 }
 .approve{
     margin-right: 10px;
@@ -94,3 +63,15 @@ body{
     color: white;
     transition: 0.5s ease-in;
 }
+.button{
+    transform: translateX(-52px);
+}
+#staffid {
+    width: 100px;
+    display: inline;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #adadad;
+    border-radius: 0;
+}
+
