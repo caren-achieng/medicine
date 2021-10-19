@@ -6,6 +6,10 @@ class UsersController extends BaseController
 {
     public function index()
     {
+        return view('sidemenu');
+    }
+    public function register()
+    {
         return view('register');
     }
 

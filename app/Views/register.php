@@ -1,4 +1,4 @@
-<?php include ('sidemenu.php')?>
+<?php include('sidemenu.php')?>
 <!doctype html>
 <html lang="en">
 <head>
