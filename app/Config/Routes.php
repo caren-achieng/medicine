@@ -36,6 +36,7 @@ $routes->setAutoRoute(true);
 //custom routes
 $routes->get('/', 'UsersController::index');
 $routes->get('/', 'Home::index');
+$routes->get('/register', 'UsersController::index');
 
 /*
  * --------------------------------------------------------------------
