@@ -936,11 +936,12 @@
                         <input type="tel" class="font form-control" name="emergencytel2">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
+                        <button type="submit" class="btn mb-4 button">Save</button>
+                </div>
             </form>
-    <div class="row">
-        <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
-            <button type="submit" class="btn mb-4 button">Save</button>
-        </div>
+   
     </div>
     </div>
 </div>
@@ -978,9 +979,6 @@
                 postaddress: {
                     minlength: 5,
                     maxlength: 9
-                },
-                pcode: {
-                    minlength: 20,
                 },
                 town: {
                     minlength: 3,
@@ -1037,10 +1035,10 @@
                     maxlength: 20,
                 },
                 nssf: {
-                    email: true,
+                    
                     required: true,
-                    minlength: 20,
-                    maxlength: 20,
+                    minlength: 9,
+                    maxlength: 9,
                 },
                 department: {
                     required: true,
@@ -1139,8 +1137,8 @@
                 nssf: {
                     nssf: "Invalid NSSF number",
                     required: "Field is required",
-                    minlength: "Minimum length 20 characters",
-                    maxlength: "Maximum length 20 characters",
+                    minlength: "Minimum length 9 characters",
+                    maxlength: "Maximum length 9 characters",
                 },
                 department: {
                     required: true,
