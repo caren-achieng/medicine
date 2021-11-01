@@ -1025,7 +1025,7 @@
                 },
                 confirmpass: {
                     required: true,
-                    equalTo: 'password'
+                    equalTo: password
                 },
                 gender: {
                     required: true,
