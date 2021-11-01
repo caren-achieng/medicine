@@ -1069,7 +1069,7 @@
                 },
                 mname: {
                     required: "Field is required",
-                    minlength: 3,
+                    minlength: "Minimum length 3 characters",
                     maxlength: "Maximum length 20 characters"
                 },
                 lname: {
