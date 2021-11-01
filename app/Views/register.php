@@ -860,6 +860,14 @@
                             <option>Human Resources Department (HR)</option>
                         </select>
                     </div>
+                    <div class="col-3 ">
+                        <label for="password" class="font text-dark mt-2 form-label">Account Password</label>
+                        <input type="password" class="font form-control" name="password">
+                    </div>
+                    <div class="col-3 ">
+                        <label for="confirmpass" class="font text-dark mt-2 form-label">Confirm Password</label>
+                        <input type="password" class="font form-control" name="confirmpass">
+                    </div>
                 </div>
 
                 <div class="row">
@@ -1117,7 +1125,7 @@
                 },
                 confirmpass: {
                     required: "Field is required",
-                    equalTo: 'password'
+                    equalTo: 'Password Mismatch'
                 },
                 gender: {
                     required: "Field is required",
