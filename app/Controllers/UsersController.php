@@ -81,8 +81,6 @@ class UsersController extends BaseController
                 'department'    => $this->request->getVar('department')
             ];
 
-            $model1 = new SpouseModel();
-
             $newData2=[
                 'spousename'=>$this->request->getVar('spousename'),
                 'mobileno'=>$this->request->getVar('spousenum'),
