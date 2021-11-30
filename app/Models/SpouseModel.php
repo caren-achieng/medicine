@@ -9,7 +9,7 @@ class SpouseModel extends Model{
     protected $primaryKey = 'spouseid';
     protected $allowedFields =
         [
-            'spouseid',	'spousename',	'mobileno',	'email',	'occupation', 'staff'
+            'spouseid','spousename','mobileno','email','occupation','staff'
         ];
 
 

@@ -36,9 +36,16 @@ $routes->setAutoRoute(true);
 //custom routes
 $routes->get('/', 'UsersController::index');
 $routes->get('/', 'Home::index');
-$routes->get('/register', 'UsersController::register');
-$routes->post('/register', 'UsersController::store');
-
+$routes->get('/register', 'UsersController::registerusers');
+$routes->get('/spouse', 'UsersController::registerspouses');
+$routes->post('/register', 'UsersController::storeusers');
+$routes->post('/registerspouse', 'UsersController::storespouses');
+$routes->get('/nextofkin', 'UsersController::registernok');
+$routes->post('/registernok', 'UsersController::storenextofkin');
+$routes->get('/emergency', 'UsersController::registeremergency');
+$routes->post('/registeremergency', 'UsersController::storeemergency');
+$routes->get('/password', 'UsersController::registerpassword');
+$routes->post('/registerpassword', 'UsersController::storepass');
 
 /*
  * --------------------------------------------------------------------

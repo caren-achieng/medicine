@@ -13,7 +13,7 @@ class UserModel extends Model{
         'age','postaddress','postcode','town',
         'county','maritalstatus','religion',
         'residence','mobilenum','hometel','email',
-        'krapin','nhifpin','nssfpin','gender', 'department'];
+        'krapin','nhifpin','nssfpin','gender', 'department','password'];
 
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];

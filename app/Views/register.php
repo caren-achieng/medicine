@@ -852,91 +852,10 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <h1 class="fonts mt-4 text-dark">Spouse Details</h1>
-                    <div class="col-6 ">
-                        <label for="spousename" class="font text-dark mt-2 form-label">Name</label>
-                        <input type="text" class="font form-control" name="spousename">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="spousenum" class="font text-dark mt-2 form-label">Mobile Number</label>
-                        <input type="tel" class="font form-control" name="spousenum">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="spouseemail" class="font text-dark mt-2 form-label">Email</label>
-                        <input type="email" class="font form-control" name="spouseemail">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="occupation" class="font text-dark mt-2 form-label">Occupation</label>
-                        <input type="text" class="font form-control" name="occupation">
-                    </div>
-                </div>
 
-                <div class="row">
-                    <h1 class="fonts mt-4 text-dark">Next of Kin Details</h1>
-                    <div class="col-6 ">
-                        <label for="nokname" class="font text-dark mt-2 form-label">Person 1: Name</label>
-                        <input type="text" class="font form-control" name="nokname">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="noknum" class="font text-dark mt-2 form-label">Person 2: Name</label>
-                        <input type="text" class="font form-control" name="nok2name">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="nokemail" class="font text-dark mt-2 form-label">Person 1: Email</label>
-                        <input type="email" class="font form-control" name="nokemail">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="nok2name" class="font text-dark mt-2 form-label">Person 2: Email</label>
-                        <input type="email" class="font form-control" name="nok2email">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="nok2num" class="font text-dark mt-2 form-label">Person 1: Mobile Number</label>
-                        <input type="tel" class="font form-control" name="noktel">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="nok2email" class="font text-dark mt-2 form-label">Person 2: Mobile Number</label>
-                        <input type="tel" class="font form-control" name="nok2tel">
-                    </div>
-                </div>
-                <div class="row">
-                    <h1 class="fonts mt-4 text-dark">Emergency Contact Details</h1>
-                    <div class="col-6 ">
-                        <label for="emergencyname" class="font text-dark mt-2 form-label">Person 1: Name</label>
-                        <input type="text" class="font form-control" name="emergencyname">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="emergency2" class="font text-dark mt-2 form-label">Person 2: Name</label>
-                        <input type="text" class="font form-control" name="emergency2">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="emergencyemail" class="font text-dark mt-2 form-label">Person 1: Email</label>
-                        <input type="email" class="font form-control" name="emergencyemail">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="emergencyemail2" class="font text-dark mt-2 form-label">Person 2: Email</label>
-                        <input type="email" class="font form-control" name="emergencyemail2">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="emergencytel" class="font text-dark mt-2 form-label">Person 1: Mobile Number</label>
-                        <input type="tel" class="font form-control" name="emergencytel">
-                    </div>
-                    <div class="col-6 ">
-                        <label for="emergencytel2" class="font text-dark mt-2 form-label">Person 2: Mobile Number</label>
-                        <input type="tel" class="font form-control" name="emergencytel2">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <h1 class="fonts mt-4 text-dark">Set Password</h1>
-                    <div class="col-6 ">
-                        <label for="password" class="font text-dark mt-2 form-label">Password</label>
-                        <input type="password" class="font form-control" name="password">
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
-                        <button type="submit" class="btn mb-4 button">Save</button>
+                        <button type="submit" class="btn mb-4 button">Next</button>
                     </div>
                 </div>
             </form>
