@@ -38,7 +38,7 @@ class UserLogin extends BaseController
                     return redirect()->to('/ClientDashboard');
                 }
                 else{
-                    return redirect()->to('/ClientDashboard');
+                    return redirect()->to('/Test');
                 }
             }else{
                 $session->setFlashdata('msg','Wrong password. Please enter correct password');
