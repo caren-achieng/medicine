@@ -20,20 +20,11 @@ class AdminLogin extends BaseController
         $email= $this->request->getVar('login-email');
         $password= $this->request->getVar('login-password');
 
-       
-    
-
         $data= $model->where('email', $email)->first();
 
         if($data){
             $pass=$data['userPassword'];
             $userName=$data['userName'];
-           //$pwd_verify=password_verify($password, $pass);
-
-        //    var_dump($userName);
-        //    var_dump($pass);
-        //    var_dump($password);
-        //    //var_dump($pwd_verify);
 
             if($pass==$password){
                 $sessionData=[
@@ -50,10 +41,7 @@ class AdminLogin extends BaseController
                 //var_dump($session);
                 $session->setFlashdata('msg','Wrong password. Please enter correct password');
                 return view('sign-up/admin-login');
-                
             }
-
-
         }else{
             $session->setFlashdata('msg','Email does not exist. Please enter correct Email!');
             return view('sign-up/admin-login');

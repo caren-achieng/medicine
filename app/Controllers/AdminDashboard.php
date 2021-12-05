@@ -30,7 +30,5 @@ class AdminDashboard extends BaseController
         return json_encode([$counts[1], $counts[2], $counts[3], $counts[4], $counts[5], $counts[6], $counts[7], $counts[8], $counts[9], $counts[10], $counts[11], $counts[12]]);
         // return json_encode($counts);
     }
-
-        
     }
 

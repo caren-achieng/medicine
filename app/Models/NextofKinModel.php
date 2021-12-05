@@ -9,7 +9,10 @@ class NextofKinModel extends Model{
     protected $primaryKey = 'nokid';
     protected $allowedFields =
         [
-            'nokname','nokmobile','nokemail','staff'
+            'nokname',
+            'nokmobile',
+            'nokemail',
+            'staff'
         ];
 
 
