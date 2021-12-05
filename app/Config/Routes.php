@@ -46,6 +46,9 @@ $routes->get('/emergency', 'UsersController::registeremergency');
 $routes->post('/registeremergency', 'UsersController::storeemergency');
 $routes->get('/password', 'UsersController::registerpassword');
 $routes->post('/registerpassword', 'UsersController::storepass');
+$routes->get('/login', 'UserLogin::index');
+
+
 
 /*
  * --------------------------------------------------------------------
