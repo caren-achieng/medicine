@@ -9,20 +9,12 @@ use App\Models\EmergencyContactModel;
 
 class UsersController extends BaseController
 {
-    public function index()
-    {
-        return view('sidemenu');
-    }
-
     public function registerusers()
     {
         $model = new DepartmentModel();
         $departments = json_decode(json_encode($model->get()->getResult()), true);
         $data['departments'] = $departments;
         return view('register', $data);
-    }
-    public function applyleave(){
-        echo view('home-section/leaveapplication');
     }
     public function registerspouses()
     {
@@ -223,7 +215,5 @@ class UsersController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
     }
-
-
 }
 

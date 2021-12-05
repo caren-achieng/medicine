@@ -32,7 +32,6 @@ class AdminLogin extends BaseController
                     'userName'=>$data['userName'],
                     'email'=>$data['email'],
                     'isSignedIn'=>TRUE
-
                 ];
 
                 $session->set($sessionData);

@@ -1,4 +1,3 @@
-
 <!-- inside home section--- leave application interface -->
 <div class="container nav-bar">
       <div class="containerTable">
@@ -98,8 +97,7 @@
             </tr>
           </tbody>
         </table>
-        
-        </div>
+    </div>
 
 
     

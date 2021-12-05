@@ -138,7 +138,6 @@
                     minlength: "Minimum length 6 characters",
                     maxlength: "Maximum length 50 characters"
                 },
-
             },
         });
     }
