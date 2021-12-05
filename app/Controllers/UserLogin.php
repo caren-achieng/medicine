@@ -43,7 +43,6 @@ class UserLogin extends BaseController
             }else{
                 $session->setFlashdata('msg','Wrong password. Please enter correct password');
                 return view('sign-up/user-login');
-                
             }
 
         }else{

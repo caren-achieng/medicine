@@ -8,7 +8,6 @@ class ClientDashboard extends BaseController
     {
         echo view('templates/dashboard-header');
         echo view('home-section/leave-application');
-        
         echo view('templates/dashboard-footer');
     }
 }

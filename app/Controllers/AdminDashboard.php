@@ -9,10 +9,8 @@ class AdminDashboard extends BaseController
        
        if(session()->get('userName')){
         $session = session();
-    echo "welcome admin ". $session->get('userName');
-    echo view('admin/admin-dashboard');
+        echo "welcome admin ". $session->get('userName');
+        echo view('admin/admin-dashboard');
     }
-
-        
     }
 }

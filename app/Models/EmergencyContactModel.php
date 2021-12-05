@@ -9,7 +9,10 @@ class EmergencyContactModel extends Model{
     protected $primaryKey = 'eid';
     protected $allowedFields =
         [
-            'ename','emobile','eemail','staff'
+            'ename',
+            'emobile',
+            'eemail',
+            'staff'
         ];
 
 
