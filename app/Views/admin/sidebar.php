@@ -28,6 +28,12 @@
             </a>
           </li>
           <li>
+            <a href="/register">
+            <i class="fas fa-user-plus icon"></i>
+              <p>Register</p>
+            </a>
+          </li>
+          <li>
             <a href="./notifications.html">
               <i class="far fa-bell"></i>
               <p>Notifications</p>
