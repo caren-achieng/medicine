@@ -13,8 +13,6 @@ class AdminDashboard extends BaseController
     public static function getMonth(){
         $model = new LeaveModel();
         $leaves = $model -> findAll();
-        // $month = date("m",strtotime($leaves[0]['start_date']));
-        // echo $month;
         $data = [];
         foreach($leaves as $leave){
             $data[] = array(
@@ -28,7 +26,6 @@ class AdminDashboard extends BaseController
             }
         }
         return json_encode([$counts[1], $counts[2], $counts[3], $counts[4], $counts[5], $counts[6], $counts[7], $counts[8], $counts[9], $counts[10], $counts[11], $counts[12]]);
-        // return json_encode($counts);
     }
     }
 

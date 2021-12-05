@@ -9,17 +9,13 @@ use App\Models\EmergencyContactModel;
 
 class UsersController extends BaseController
 {
-    public function index()
-    {
-        return view('sidemenu');
-    }
-
     public function registerusers()
     {
         $model = new DepartmentModel();
         $departments = json_decode(json_encode($model->get()->getResult()), true);
         $data['departments'] = $departments;
-        return view('register', $data);
+        echo view('admin/sidebar');
+        echo view('register', $data);
     }
     public function applyleave(){
         echo view('home-section/leaveapplication');

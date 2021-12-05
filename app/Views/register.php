@@ -1,6 +1,4 @@
-<?php include('sidemenu.php');
-
-?>
+<?php //include('admin/sidebar.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
