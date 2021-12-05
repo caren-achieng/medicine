@@ -7,7 +7,7 @@ class Test extends BaseController
 {
     public function index()
     {
-        echo view('examples/dashboard.html');
+        echo view('examples/dashboard');
 
     }
 
