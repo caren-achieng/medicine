@@ -1,7 +1,7 @@
 demo = {
   initDashboardPageCharts: function() {
       $.ajax({
-      url: "http://localhost:8080/test/getMonth",
+      url: "http://localhost:8080/AdminDashboard/getMonth",
       type: 'GET',
       dataType: 'json',
       success: function(res) {
