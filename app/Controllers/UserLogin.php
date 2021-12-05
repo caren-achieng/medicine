@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UserAccountModel;
+use App\Models\UserModel;
 
 class UserLogin extends BaseController
 {
@@ -15,30 +15,27 @@ class UserLogin extends BaseController
     {
         helper (['form']); 
         $session=session();
-        $model=new UserAccountModel();
+        $model=new UserModel();
 
         $email= $this->request->getVar('user-email');
         $password= $this->request->getVar('login-password');
-
-       
-    
-
         $data= $model->where('email', $email)->first();
 
         if($data){
-            $pass=$data['userPassword'];
-            $userName=$data['userName'];
+            $pass=$data['password'];
+            $userName=$data['fname'];
            //$pwd_verify=password_verify($password, $pass);
 
-        //    var_dump($userName);
-        //    var_dump($pass);
-        //    var_dump($password);
-        //    //var_dump($pwd_verify);
+
+//            var_dump($userName);
+//            var_dump($pass);
+//            var_dump($password);
+//            //var_dump($pwd_verify);
 
             if($pass==$password){
                 $sessionData=[
-                    'userID'=>$data['userID'],
-                    'userName'=>$data['userName'],
+                    'userID'=>$data['staff_number'],
+                    'userName'=>$data['fname'],
                     'email'=>$data['email'],
                     'isSignedIn'=>TRUE
 
@@ -52,7 +49,6 @@ class UserLogin extends BaseController
                 return view('sign-up/user-login');
                 
             }
-
 
         }else{
             $session->setFlashdata('msg','Email does not exist. Please enter correct Email!');

@@ -21,6 +21,11 @@ class UsersController extends BaseController
         $data['departments'] = $departments;
         return view('register', $data);
     }
+    public function applyleave(){
+//        echo view('templates/dashboard-header');
+        echo view('home-section/leaveapplication');
+//        echo view('templates/dashboard-footer');
+    }
     public function registerspouses()
     {
         return view('spouse');

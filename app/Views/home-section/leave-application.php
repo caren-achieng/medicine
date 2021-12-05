@@ -1,9 +1,6 @@
 
 <!-- inside home section--- leave application interface -->
 <div class="container nav-bar">
-
- 
-    
       <div class="containerTable">
       <h2 class="table-title">LEAVE APPLICATION</h2>
       <table class="table table-striped">
@@ -51,7 +48,7 @@
             <td class="data">Compassionate Leave</td>
             <td class="data">1</td>
             <td  class="data">0</td>
-            <td class="data"> <a href=""> <button type="button" class="btn btn-success disabled">APPLY</button> </a> </td>
+            <td class="data"> <a href="<?= base_url('/leaveapplication');?>"> <button type="button" class="btn btn-success disabled">APPLY</button> </a> </td>
           </tr>
           
         </tbody>

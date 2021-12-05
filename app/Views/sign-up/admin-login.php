@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Login and Registration Form  </title>-->
-    <link rel="stylesheet" href="<?php echo base_url('Assets/css/client-loginStyles.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('css/client-loginStyles.css'); ?>">
     
     <!-- Fontawesome CDN Link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
@@ -15,7 +15,7 @@
     <input type="checkbox" id="flipdisabled">
     <div class="cover">
       <div class="front">
-        <img src="<?php echo base_url('Assets/images/img1.jfif')?>" alt="">
+        <img src="<?php echo base_url('images/img1.jfif')?>" alt="">
         <div class="text">
           <span class="text-1">MEDICING <br> Easy Leave</span>
           <span class="text-2">for the purpose of your well being</span>
@@ -49,9 +49,9 @@
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Sumbit">
+                <input type="submit" value="Log In">
               </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
         </form>
        

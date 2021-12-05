@@ -17,7 +17,5 @@ class UserAccountModel extends Model
         'phoneNumber',
         'userPassword',
         'gender'
-      
-        
     ];
 }

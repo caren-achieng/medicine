@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UserAccountModel;
+use App\Models\UserModel;
 
 class AdminLogin extends BaseController
 {
@@ -15,7 +15,7 @@ class AdminLogin extends BaseController
     {
         helper (['form']); 
         $session=session();
-        $model=new UserAccountModel();
+        $model=new UserModel();
 
         $email= $this->request->getVar('login-email');
         $password= $this->request->getVar('login-password');

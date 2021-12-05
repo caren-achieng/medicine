@@ -15,25 +15,25 @@ class UserModel extends Model{
         'residence','mobilenum','hometel','email',
         'krapin','nhifpin','nssfpin','gender', 'department','password'];
 
-    protected $beforeInsert = ['beforeInsert'];
-    protected $beforeUpdate = ['beforeUpdate'];
+//    protected $beforeInsert = ['beforeInsert'];
+//    protected $beforeUpdate = ['beforeUpdate'];
 
-    protected function beforeInsert(array $data)
-    {
-        $data = $this->passwordHash($data);
-        return $data;
-    }
-
-    protected function beforeUpdate(array $data)
-    {
-        $data = $this->passwordHash($data);
-        return $data;
-    }
-
-    protected function passwordHash(array $data)
-    {
-        if(isset($data['data']['password']))
-            $data['data']['password'] = password_hash($data['data']['password'],PASSWORD_DEFAULT);
-        return $data;
-    }
+//    protected function beforeInsert(array $data)
+//    {
+//        $data = $this->passwordHash($data);
+//        return $data;
+//    }
+//
+//    protected function beforeUpdate(array $data)
+//    {
+//        $data = $this->passwordHash($data);
+//        return $data;
+//    }
+//
+//    protected function passwordHash(array $data)
+//    {
+//        if(isset($data['data']['password']))
+//            $data['data']['password'] = password_hash($data['data']['password'],PASSWORD_DEFAULT);
+//        return $data;
+//    }
 }
