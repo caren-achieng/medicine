@@ -14,8 +14,7 @@ class UsersController extends BaseController
         $model = new DepartmentModel();
         $departments = json_decode(json_encode($model->get()->getResult()), true);
         $data['departments'] = $departments;
-        echo view('admin/sidebar');
-        echo view('register', $data);
+        return view('register', $data);
     }
     public function registerspouses()
     {
@@ -216,7 +215,5 @@ class UsersController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
     }
-
-
 }
 

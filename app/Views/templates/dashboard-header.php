@@ -1,5 +1,3 @@
-
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -122,6 +120,5 @@
                 <?php endif;?>
         <i class='bx bx-chevron-down' ></i>
       </div>
-    </nav> 
-
+    </nav>
   <!-- home-section content and footer after-->
