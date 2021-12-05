@@ -99,6 +99,9 @@ $(function(){
             },
             department: {
                 required: true,
+            },
+            role:{
+                required:true
             }
         },
 
@@ -195,6 +198,9 @@ $(function(){
             },
             department: {
                 required: "Field is required",
+            },
+            role:{
+                required: "Field is required"
             }
         },
         submitHandler: function (form) {

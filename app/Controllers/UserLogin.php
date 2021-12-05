@@ -24,13 +24,6 @@ class UserLogin extends BaseController
         if($data){
             $pass=$data['password'];
             $userName=$data['fname'];
-           //$pwd_verify=password_verify($password, $pass);
-
-
-//            var_dump($userName);
-//            var_dump($pass);
-//            var_dump($password);
-//            //var_dump($pwd_verify);
 
             if($pass==$password){
                 $sessionData=[
@@ -38,13 +31,16 @@ class UserLogin extends BaseController
                     'userName'=>$data['fname'],
                     'email'=>$data['email'],
                     'isSignedIn'=>TRUE
-
                 ];
 
                 $session->set($sessionData);
-                return redirect()->to('/ClientDashboard');
+                if($data['role']==1){
+                    return redirect()->to('/ClientDashboard');
+                }
+                else{
+                    return redirect()->to('/Test');
+                }
             }else{
-                //var_dump($session);
                 $session->setFlashdata('msg','Wrong password. Please enter correct password');
                 return view('sign-up/user-login');
                 

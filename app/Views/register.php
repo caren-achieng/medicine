@@ -850,6 +850,14 @@
                             } ?>
                         </select>
                     </div>
+                    <div class="col-3 ">
+                        <label for="role" class="font text-dark mt-2 form-label">Role</label>
+                        <select name="role" class="font form-select">
+                                <option selected></option>
+                                <option value="1">Admin</option>
+                                <option value="2">Employee</option>
+                        </select>
+                    </div>
                 </div>
 
 

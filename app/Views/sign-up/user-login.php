@@ -32,7 +32,7 @@
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
-            <div class="title">User Login</div>
+            <div class="title">Log In</div>
           <form action="<?= base_url('UserLogin/signin');?>" method="POST">
             <div class="input-boxes">
               <div class="input-box">
@@ -45,9 +45,9 @@
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Log In">
               </div>
-              <div class="text sign-up-text">Don't have an account? <label for="#">Contact</label> Admin</div>
+                <div class="text sign-up-text">Don't have an account? <label><a href="/register">Register</a></label></div>
             </div>
         </form>
 

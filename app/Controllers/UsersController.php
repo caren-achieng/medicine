@@ -66,7 +66,8 @@ class UsersController extends BaseController
             'nhif' => 'required|max_length[20]|is_unique[users.nhifpin]',
             'nssf' => 'required|max_length[20]|is_unique[users.nssfpin]',
             'department' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'role'=>'required'
         ];
 
         if ($this->validate($rules)) {
@@ -93,7 +94,8 @@ class UsersController extends BaseController
                 'nhifpin' => $this->request->getVar('nhif'),
                 'nssfpin' => $this->request->getVar('nssf'),
                 'gender' => $this->request->getVar('gender'),
-                'department' => $this->request->getVar('department')
+                'department' => $this->request->getVar('department'),
+                'role'=> $this->request->getVar('role')
             ];
 
             $model->save($newData);
