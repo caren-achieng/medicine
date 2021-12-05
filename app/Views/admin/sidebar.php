@@ -34,12 +34,6 @@
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
-              <i class="far fa-bell"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
             <a href="./user.html">
               <i class="fas fa-user"></i>
               <p>User Profile</p>

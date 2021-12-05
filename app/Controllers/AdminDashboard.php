@@ -9,6 +9,22 @@ class AdminDashboard extends BaseController
     {
         echo view('admin/dashboard');
     }
+    public function leaves()
+    {
+        echo view('admin/leaves');
+    }
+    public function notifications()
+    {
+        echo view('admin/notifications');
+    }
+    public function user()
+    {
+        echo view('admin/user');
+    }
+    public function users()
+    {
+        echo view('admin/users');
+    }
 
     public static function getMonth(){
         $model = new LeaveModel();
