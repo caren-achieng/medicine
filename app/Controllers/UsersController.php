@@ -17,9 +17,6 @@ class UsersController extends BaseController
         echo view('admin/sidebar');
         echo view('register', $data);
     }
-    public function applyleave(){
-        echo view('home-section/leaveapplication');
-    }
     public function registerspouses()
     {
         return view('spouse');
