@@ -215,5 +215,9 @@ class UsersController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
     }
+
+    public function applyleave(){
+        return view('home-section/leaveapplication');
+    }
 }
 
