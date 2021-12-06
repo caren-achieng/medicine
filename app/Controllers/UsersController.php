@@ -6,6 +6,7 @@ use App\Models\DepartmentModel;
 use App\Models\SpouseModel;
 use App\Models\NextofKinModel;
 use App\Models\EmergencyContactModel;
+use App\Models\LeaveModel;
 
 class UsersController extends BaseController
 {
@@ -214,6 +215,17 @@ class UsersController extends BaseController
         else {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
+    }
+
+    public function initialize_dashboard(){
+        $administrators = new UserModel();
+        $data['admins'] = $administrators->join('departments', 'departments.departmentid = department')->whereIn('role', [1])->paginate();
+        $data['pager'] = $administrators->pager;
+        $status = new LeaveModel();
+        $data['leaves'] = $status->join('users', 'users.staff_number = leaves.staff_number')->paginate();
+        $data['pager2'] = $status->pager;
+        echo view('admin/dashboard', $data);
+        
     }
 }
 

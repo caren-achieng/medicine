@@ -6,6 +6,6 @@ class Review extends BaseController
 {
     public function index()
     {
-        echo view('review');
+        echo view('admin/review');
     }
 }
