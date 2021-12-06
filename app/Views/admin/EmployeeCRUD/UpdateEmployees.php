@@ -37,7 +37,7 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-body">
-                        <form id="self_registration" class="row g-2" method="post" action="/register">
+                        <form id="self_registration" class="row g-2" method="post" action="/update">
                             <div class="row">
                                 <h1 class="mt-4 text-dark fs-3 text-center">Edit Employee Data</h1>
                                 <div class="col-3">

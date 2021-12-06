@@ -11,9 +11,12 @@ class AdminsController extends BaseController
 {
     public function ReadEmployees()
     {
+        $department = new DepartmentModel();
+        $data['departments']=$department->findAll();
         $employees = new UserModel();
         $data['employees'] = json_decode(json_encode($employees->whereIn('role', [1])->paginate()),true);
         $data['pager'] = $employees->pager;
+        $data['employees'] = json_decode(json_encode($employees->join('departments', 'departments.departmentid = users.department')->()), true);
         return view('admin/EmployeeCRUD/ReadEmployees', $data);
     }
 
@@ -43,6 +46,7 @@ class AdminsController extends BaseController
     public function storeusers()
     {
         $rules = [
+            'title' => 'required',
             'postaddress' => 'min_length[5]|max_length[9]',
             'pcode' => 'required',
             'town' => 'min_length[3]|max_length[20]',
