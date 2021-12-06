@@ -19,28 +19,28 @@
             <td class="data">Sick Leave</td>
             <td class="data">30</td>
             <td  class="data">12</td>
-            <td class="data"> <a href=""> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
+            <td class="data"> <a href="<?= base_url('/leaveapplication');?>"> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
           </tr>
           <tr>
             <th class="data" scope="row">002</th>
             <td class="data">Maternity Leave</td>
             <td class="data">30</td>
             <td  class="data">12</td>
-            <td class="data"> <a href=""> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
+            <td class="data"> <a href="<?= base_url('/leaveapplication');?>"> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
           </tr>
           <tr>
             <th class="data" scope="row">003</th>
             <td class="data">Paternity Leave</td>
             <td class="data">3</td>
             <td  class="data">3</td>
-            <td class="data"> <a href=""> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
+            <td class="data"> <a href="<?= base_url('/leaveapplication');?>"> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
           </tr>
           <tr>
             <th class="data" scope="row">004</th>
             <td class="data">Annual leave</td>
             <td class="data">27</td>
             <td  class="data">27</td>
-            <td class="data"> <a href=""> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
+            <td class="data"> <a href="<?= base_url('/leaveapplication');?>"> <button type="button" class="btn btn-success">APPLY</button> </a> </td>
           </tr>
           <tr>
             <th class="data" scope="row">005</th>
