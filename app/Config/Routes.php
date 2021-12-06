@@ -51,6 +51,9 @@ $routes->get('/leaveapplication', 'UsersController::applyleave');
 $routes->get('/dashboard', 'AdminDashboard::initialize_dashboard');
 $routes->get('/users', 'AdminDashboard::users');
 $routes->get('/user', 'AdminDashboard::user');
+$routes->get('/ReadEmployees', 'AdminsController::ReadEmployees');
+
+
 
 
 

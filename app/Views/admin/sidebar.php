@@ -22,13 +22,13 @@
                 </a>
             </li>
             <li>
-                <a href="./user.html">
+                <a href="/ReadEmployees">
                     <i class="fas fa-user"></i>
                     <p>View Employees</p>
                 </a>
             </li>
             <li>
-                <a href="./user.html">
+                <a href="#">
                     <i class="fas fa-user"></i>
                     <p>View Admins</p>
                 </a>
