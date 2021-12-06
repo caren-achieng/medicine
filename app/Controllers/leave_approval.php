@@ -8,12 +8,7 @@ class Leave_approval extends BaseController
 {
     public function index()
     {
-        $db=db_connect();
-        $model= new getUserdets($db);
-        echo'<pre>';
-        print_r($model->getU());
-        echo'<pre>';
-        return view('leave_approval.php');
+        return view('admin/leave-approval.php');
     }
     //This function fetches data from the database(tables(user and leaves)) stores it in an array
     //and passess it to the view leave_apporval
@@ -30,31 +25,40 @@ class Leave_approval extends BaseController
                 if($arr['leave_id']==$id){
                     $data=['leaveID'=>$arr['leave_id'],'staffID'=>$arr['staff_number'],
                     'leavetype'=>$arr['leave_type'],
-                    'start'=>$arr['start_date'],'end'=>$arr['end_date'],'firstName'=>$arr['Fname'],'lastName'=>$arr['Lname'],
+                    'start'=>$arr['start_date'],'end'=>$arr['end_date'],'firstName'=>$arr['fname'],'lastName'=>$arr['lname'],
                         'dept'=>$arr['department'],];
                 }
             }
         }
-        return view('leave_approval.php',$data);
+        return view('admin/leave-approval.php',$data);
 
     }
-    public function approve_leave($id){
+    // public function approve_leave($id){
+    //     $model=new leaveapp_mod();
+    //     $state=['leave_status'=>'approved'];
+    //     $model->update($id,$state);
+    //     $result=$this->leavedets($id);
+    //     return $result;
+
+    // }
+    // public function deny_leave($id){
+    //     $model=new leaveapp_mod();
+    //     $state=['leave_status'=>'denied'];
+    //     $model->update($id,$state);
+    //     $result=$this->leavedets($id);
+    //     return $result;
+    // }
+    public function leave_approval(){
+        $id = $this->request->getVar('leave_id');
         $model=new leaveapp_mod();
-        $state=['leave_status'=>'approved'];
+        if($this->request->getVar('approve') == 'Approve'){
+            $state=['leave_status'=>'Approved'];
+        }else{
+            $state=['leave_status'=>'Denied'];
+        }
         $model->update($id,$state);
         $result=$this->leavedets($id);
         return $result;
-
-    }
-    public function deny_leave($id){
-        $model=new leaveapp_mod();
-        $state=['leave_status'=>'denied'];
-        $model->update($id,$state);
-        $result=$this->leavedets($id);
-        return $result;
-    }
-    public function test(){
-        echo view('admin/leaves');
     }
 
 }
