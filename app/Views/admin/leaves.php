@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Medicing - Administators
+    Medicing - Users
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -14,24 +14,6 @@
   <!-- CSS Files -->
   <link href="/css/bootstrap.min.css" rel="stylesheet" />
   <link href="/css/dashboard.css?v=1.5.0" rel="stylesheet" />
-  <style>
-.pagination li{
-padding: 0 10px;
-border: solid 1px white;
-border-radius: 2px;
-margin: 5px 5px 0 5px;
-}
-.pagination li a{
-    text-decoration: none;
-    color: white;
-}
-.pagination .active{
-    background: #f96332;
-}
-ul.pagination{
-    float: right;
-}
-  </style>
 </head>
 
 <body class="">
@@ -49,7 +31,7 @@ ul.pagination{
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="#pablo">Table List</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -57,7 +39,38 @@ ul.pagination{
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <i class="now-ui-icons media-2_sound-wave"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="now-ui-icons location_world"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
@@ -71,119 +84,64 @@ ul.pagination{
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
+      <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
         <div class="row">
-          <div class="col-md-6">
-            <div class="card  card-tasks">
-              <div class="card-header ">
-                <h5 class="card-category">Users</h5>
-                <h4 class="card-title">Administrators</h4>
-              </div>
-              <div class="card-body ">
-                <div class="table-full-width table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Email
-                      </th>
-                      <th>
-                        Telephone
-                      </th>
-                      <th class="text-right">
-                         Department
-                      </th>
-                    </thead>
-                    <tbody>
-                      <?php foreach($admins as $admin){?>
-                      <tr>
-                        <td>
-                          <?php echo $admin['fname']." ".$admin['lname']; ?>
-                        </td>
-                        <td>
-                          <?php echo $admin['email']; ?> 
-                        </td>
-                        <td>
-                          <?php echo $admin['mobilenum'] ?>
-                        </td>
-                        <td class="text-right">
-                          <?php echo $admin['departmentname'] ?>
-                        </td>
-                      </tr>
-                      <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-                <?php echo $pager->links(); ?>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-category">Employee List</h5>
-                <h4 class="card-title"> Employees Status</h4>
+                <h4 class="card-title">Users</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        Name
+                        Leave ID
                       </th>
                       <th>
-                        Email
+                        Staff Number
                       </th>
                       <th>
-                        Status
+                        Leave Type
+                      </th>
+                      <th>
+                        Start Date
+                      </th>
+                      <th>
+                        End Date
+                      </th>
+                      <th>
+                        Leave Status
                       </th>
                       <th class="text-right">
-                        Days
+                        Details
                       </th>
                     </thead>
                     <tbody>
-                      <?php 
-                      date_default_timezone_set('Africa/Nairobi');
-                      $date = strtotime(date('Y-m-d'));
-                      $time_remaining;
-                      $status;
-                      foreach($leaves as $leave){
-                        if(strtotime($leave['end_date']) > $date ){
-                          $time_remaining = (int) (strtotime($leave['end_date']) - $date)/86400;
-                          $status = "On leave";
-                        }else{
-                          $time_remaining = 0;
-                          $status = "Working";
-                        }?>
                       <tr>
                         <td>
-                          <?php echo $leave['fname']." ".$leave['lname']; ?>
+                          Dakota Rice
                         </td>
                         <td>
-                          <?php echo $leave['email']; ?>
+                          Niger
                         </td>
                         <td>
-                          <?php echo $status; ?>
+                          Oud-Turnhout
                         </td>
                         <td class="text-right">
-                          <?php echo $time_remaining ?>
+                          $36,738
                         </td>
                       </tr>
-                      <?php } ?>
                     </tbody>
                   </table>
                 </div>
-                <?php echo $pager2->links(); ?>
               </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -191,18 +149,15 @@ ul.pagination{
   <script src="/js/core/popper.min.js"></script>
   <script src="/js/core/bootstrap.min.js"></script>
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
   <script src="/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="/js/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      demo.initDashboardPageCharts();
-
-    });
-  </script>
 </body>
 
 </html>
