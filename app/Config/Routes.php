@@ -56,6 +56,7 @@ $routes->get('ReadEmployees/UpdateEmployees/(:num)','AdminsController::edit/$1')
 $routes->get('clients/delete/(:num)','Admin::delete/$1');
 $routes->post('client/update/(:num)','Admin::update/$1');
 $routes->post('/Update', 'UsersController::updateuser');
+$routes->post('/approval', 'Leave_approval::leave_approval');
 
 
 
