@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'medicing_2',
+        'database' => 'medicing',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
