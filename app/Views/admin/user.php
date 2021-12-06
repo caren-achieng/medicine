@@ -94,8 +94,8 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
-                          <select name="status" class="font form-select form-control" value="<?php echo $user[0]['maritalstatus']?>">
-                              <option selected disabled>Choose one</option>
+                          <select name="status" class="font form-select form-control">
+                              <option selected readonly value="<?php echo $user[0]['maritalstatus']?>"><?php echo $user[0]['maritalstatus']?></option>
                               <option>Married</option>
                               <option>Widowed</option>
                               <option>Separated</option>
