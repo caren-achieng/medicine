@@ -217,15 +217,6 @@ class UsersController extends BaseController
         }
     }
 
-    public function initialize_dashboard(){
-        $administrators = new UserModel();
-        $data['admins'] = $administrators->join('departments', 'departments.departmentid = department')->whereIn('role', [1])->paginate();
-        $data['pager'] = $administrators->pager;
-        $status = new LeaveModel();
-        $data['leaves'] = $status->join('users', 'users.staff_number = leaves.staff_number')->paginate();
-        $data['pager2'] = $status->pager;
-        echo view('admin/dashboard', $data);
-    }
     public function applyleave(){
         return view('home-section/leaveapplication');
     }

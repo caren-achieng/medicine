@@ -25,62 +25,10 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
             </div>
             <a class="navbar-brand" href="#pablo">User Profile</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons location_world"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
         </div>
       </nav>
       <!-- End Navbar -->
@@ -99,13 +47,13 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Department (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                        <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $user['departmentname']?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" value="<?php echo $user['email'] ?>">
                       </div>
                     </div>
                   </div>
@@ -113,7 +61,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                        <input type="text" class="form-control" placeholder="Home Address" value="<?php $user['postaddress'] ?>">
                       </div>
                     </div>
                   </div>
@@ -121,19 +69,19 @@
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="Mike">
+                        <input type="text" class="form-control" placeholder="City" value="<?php echo $user['town']?>">
                       </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
                         <label>County</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                        <input type="text" class="form-control" placeholder="Country" value="<?php echo $user['county']?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code">
+                        <input type="number" class="form-control" placeholder="ZIP Code" value="<?php echo $user['postcode']?>">
                       </div>
                     </div>
                   </div>
@@ -141,7 +89,7 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
-                          <select name="status" class="font form-select form-control">
+                          <select name="status" class="font form-select form-control" value="<?php $user['maritalstatus']?>">
                               <option selected disabled>Choose one</option>
                               <option>Married</option>
                               <option>Widowed</option>

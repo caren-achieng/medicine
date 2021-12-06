@@ -2,12 +2,19 @@
 
 namespace App\Controllers;
 use App\Models\LeaveModel;
+use App\Models\UserModel;
+use org\bovigo\vfs\vfsStreamWrapperUnregisterTestCase;
 
 class AdminDashboard extends BaseController
 {
-    public function index()
-    {
-        echo view('admin/dashboard');
+    public function initialize_dashboard(){
+        $administrators = new UserModel();
+        $data['admins'] = $administrators->join('departments', 'departments.departmentid = department')->whereIn('role', [1])->paginate();
+        $data['pager'] = $administrators->pager;
+        $status = new LeaveModel();
+        $data['leaves'] = $status->join('users', 'users.staff_number = leaves.staff_number')->paginate();
+        $data['pager2'] = $status->pager;
+        echo view('admin/dashboard', $data);
     }
     public function leaves()
     {
@@ -19,7 +26,12 @@ class AdminDashboard extends BaseController
     }
     public function user()
     {
-        echo view('admin/user');
+        $session=session();
+        $user_id = $session->get('userID');
+        $model = new UserModel();
+        // $data['user'] = $model->getWhere(['staff_number'=> $user_id])->getResult();
+        $data['user'] = $model->join('departments', 'departments.departmentid = users.department')->getWhere(['staff_number' => $user_id])->getResult();
+        echo view('admin/user', $data);
     }
     public function users()
     {
