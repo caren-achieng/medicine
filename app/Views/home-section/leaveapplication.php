@@ -21,10 +21,9 @@
     <script>
         $(function() {
             $.ajax({
-                url: '../backend/gender.php',
+                url: 'http://localhost:8080/LeaveController/gender',
                 success: function(result) {
-                    var check = JSON.parse(result)
-                    if (check.gender == 'male')
+                    if (result.gender == 'male')
                         $("option[value='maternity']").remove()
                     else
                         $("option[value='paternity']").remove()
@@ -56,38 +55,51 @@
             <!-- ERROR MESSAGES-->
 
             <?php
-            if (isset($_REQUEST)) {
-                if (isset($_REQUEST['message'])) { ?>
-                    <div class="w3-display-container w3-container w3-green w3-section w-full">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-                        <h3>Leave Application</h3>
-                        <p>Message: <?php echo $_REQUEST["message"] ?></p>
-                    </div>
-                <?php }
-
-                if (isset($_REQUEST['excessDays'])) { ?>
-                    <div class="w3-display-container w3-container w3-red w3-section w-full">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-                        <h3>Leave Application Failed</h3>
-                        <p>Error: Applied for Too Many Days!</p>
-                    </div>
-                <?php }
-
-                if (isset($_REQUEST['noDays'])) { ?>
-                    <div class="w3-display-container w3-container w3-red w3-section w-full">
-                        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
-                        <h3>Leave Application Failed</h3>
-                        <p>Error: No more Leave Days left!</p>
-                    </div>
+            if (isset($diff)) { ?>
+                <div class="w3-display-container w3-container w3-red w3-section w-full">
+                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h3>Leave Application</h3>
+                    <p>Error: Difference between the two dates is less than 1</p>
+                </div>
             <?php }
-            } ?>
 
-            <div class="header">
+            if (isset($negative)) { ?>
+                <div class="w3-display-container w3-container w3-red w3-section w-full">
+                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h3>Leave Application Failed</h3>
+                    <p>Error: You have applied for excess leave days!</p>
+                </div>
+            <?php }
+
+            if (isset($validation)) { ?>
+                <div class="w3-display-container w3-container w3-red w3-section w-full">
+                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h3>Input Error(s)</h3>
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php } ?>
+
+            <!-- SUCCESS MESSAGE-->
+
+            <?php if (isset($created)) { ?>
+                <div class="w3-display-container w3-container w3-green w3-section w-full">
+                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                    <h2>Success</h2>
+                    <p>Leave Application Successful: Pending Review</p>
+                </div>
+            <?php } ?>
+
+            <div class="header flex flex-row justify-center relative">
+                <div class="left-0 absolute">
+                    <svg xmlns="http://www.w3.org/2000/svg" onclick="back()" class="w-10 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                    </svg>
+                </div>
                 <h1 class="text-4xl text-center">
                     Apply For Leave
                 </h1>
             </div>
-            <form action="../backend/process_leave.php" method="post" class="flex flex-col my-6" enctype="multipart/form-data">
+            <form action="<?= base_url('/LeaveController/newLeave') ?>" method="post" class="flex flex-col my-6" enctype="multipart/form-data">
                 <div class="leave-type flex flex-row w-full justify-evenly my-4">
                     <div class="flex flex-col w-1/4 my-2">
                         <div>
@@ -96,7 +108,7 @@
                             </label>
                         </div>
                         <div class="my-1">
-                            <input type="text" name="userName" id="userName" class="w-full p-2 rounded border-2 border-gray-400 cursor-not-allowed select-none" disabled>
+                            <input type="text" name="userName" id="userName" class="w-full p-2 rounded border-2 border-gray-400 cursor-not-allowed select-none" value="<?= $_SESSION['userName'] ?>" disabled>
                         </div>
                     </div>
                     <div class="flex flex-col w-1/4 my-2">
@@ -136,7 +148,7 @@
                             </label>
                         </div>
                         <div class="my-1">
-                            <input type="date" name="startDate" id="startDate" class="w-full p-2 rounded border-2 border-gray-400">
+                            <input type="date" name="startDate" id="startDate" class="w-full p-2 rounded border-2 border-gray-400" onchange="autoDate($('#startDate').val())">
                         </div>
                     </div>
                     <div class="flex flex-col w-1/4 my-2">
@@ -202,9 +214,10 @@
         if (choice == 'maternity' || choice == 'paternity' || choice == 'sabbatical') {
             $('#endDateLabel').hide()
             $('#endDate').hide()
+            autoDate(choice)
         } else {
             $('#endDateLabel').show()
-            $('#endDate').show()
+            $('#endDate').show().val('')
         }
     }
 
@@ -212,13 +225,36 @@
         var leave = $('#leaveType').val()
 
         $.ajax({
-            url: "../backend/leave_balance.php?leaveType=" + leave,
+            url: "http://localhost:8080/LeaveController/leaveBalance/" + leave,
             success: function(result) {
-                var balance = JSON.parse(result)
-                $('#leaveBalance').val(balance[leave])
+                $('#leaveBalance').val(result[leave])
             }
         })
     }
+
+    function newDate(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result.toISOString().slice(0, 10);
+    }
+
+    function autoDate(leave) {
+
+        var startdate = $('#startDate').val()
+
+
+        if (leave == 'sabbatical')
+            $('#endDate').val(newDate(startdate, 180))
+
+        if (leave == 'maternity' || leave == 'paternity')
+            $('#endDate').val(newDate(startdate, 90))
+
+    }
+
+    function back() {
+        var previousUrl = document.referrer;
+        window.location.href = previousUrl;
+    }
 </script>
 
-</html>
+</html

@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Models;
+
 use CodeIgniter\Model;
-class LeaveModel extends Model{
+
+class LeaveModel extends Model
+{
 
     protected $table = 'leaves';
     protected $allowedFields = [
@@ -13,4 +16,9 @@ class LeaveModel extends Model{
         'leave_status',
         'approver_id'
     ];
+
+    public function createLeave(array $details)
+    {
+        $this->insert($details);
+    }
 }
