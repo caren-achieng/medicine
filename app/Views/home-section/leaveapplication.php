@@ -242,6 +242,7 @@
 
         var startdate = $('#startDate').val()
 
+        if (startdate == '' || startdate == null) return;
 
         if (leave == 'sabbatical')
             $('#endDate').val(newDate(startdate, 180))

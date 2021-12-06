@@ -1,42 +1,53 @@
-a{
-	display: inline-block;
-	border: 1px solid blue;
-	border-radius: 5px;
-    text-decoration: none;
-    margin: 2px;
-    padding: 6px 12px;
-    transition: all 100ns ease;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-a:hover{
-	background: rgb(45, 152, 188);
-	cursor: pointer;
+th,
+td {
+    padding: 12px 15px;
 }
-.flex{
-	display: flex;
-}
-table {
-	float: right;
-    margin-top: 30px;
-    margin-left: 150px;
- 	z-index: 2;
- 	width: 70%; 
- 	border-collapse: collapse;
-	border-spacing: 0;
-	box-shadow: 0 2px 15px rgba(64,64,64,.7);
-    border-radius: 12px;
-}
-td , th{
- padding: 15px 20px;
- text-align: center;
- }
- th{
-     background: linear-gradient(135deg, #7d2ae8, #71b7e6, #9b59b6);
-     background: #7d2ae8;
- color: white;
- font-family: 'Open Sans',Sans-serif;
- font-weight: 200;
- text-transform: uppercase;
+
+th {
+    background: linear-gradient(135deg, #7d2ae8, #71b7e6, #9b59b6);
+    background: #7d2ae8;
 }
 tr{
- width: 100%;
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
 }
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.user-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-table th {
+    background-color: black;
+    color: white;
+}
+
