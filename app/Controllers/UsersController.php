@@ -225,7 +225,9 @@ class UsersController extends BaseController
         $data['leaves'] = $status->join('users', 'users.staff_number = leaves.staff_number')->paginate();
         $data['pager2'] = $status->pager;
         echo view('admin/dashboard', $data);
-        
+    }
+    public function applyleave(){
+        return view('home-section/leaveapplication');
     }
 }
 

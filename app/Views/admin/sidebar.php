@@ -15,6 +15,24 @@
               <p>Dashboard</p>
             </a>
           </li>
+            <li>
+                <a href="/register">
+                    <i class="fas fa-user-plus icon"></i>
+                    <p>Register</p>
+                </a>
+            </li>
+            <li>
+                <a href="./user.html">
+                    <i class="fas fa-user"></i>
+                    <p>View Employees</p>
+                </a>
+            </li>
+            <li>
+                <a href="./user.html">
+                    <i class="fas fa-user"></i>
+                    <p>View Admins</p>
+                </a>
+            </li>
           <li>
             <a href="#">
               <i class="fas fa-door-open"></i>
@@ -27,12 +45,7 @@
               <p>Users</p>
             </a>
           </li>
-          <li>
-            <a href="/register">
-            <i class="fas fa-user-plus icon"></i>
-              <p>Register</p>
-            </a>
-          </li>
+
           <li>
             <a href="/user">
               <i class="fas fa-user"></i>

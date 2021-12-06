@@ -11,7 +11,6 @@
    </head>
 <body>
   <div class="container">
-    <input type="checkbox" id="flipdisabled">
     <div class="cover">
       <div class="front">
         <img id="loginImage" src="<?php echo base_url('/images/loginImage.jfif')?>" alt="">
@@ -21,7 +20,6 @@
         </div>
       </div>
       <div class="back">
-        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
         <div class="text">
           <span class="text-1">Complete miles of journey <br> with one step</span>
           <span class="text-2">Let's get started</span>
