@@ -215,6 +215,35 @@ class UsersController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
     }
+    public function updateuser(){
+        $rules = [
+            'postaddress' => 'min_length[5]|max_length[9]',
+            'postcode' => 'required',
+            'town' => 'min_length[3]|max_length[20]',
+            'county' => 'required',
+            'email' => 'required|min_length[6]|max_length[50]|valid_email',
+            'status' => 'required'
+        ];
+
+        if ($this->validate($rules)) {
+            //store user in DB
+            $model = new UserModel();
+            $newData = [
+                'staff_number'=>$this->request->getVar('id'),
+                'postaddress' => $this->request->getVar('postaddress'),
+                'postcode' => $this->request->getVar('postcode'),
+                'town' => $this->request->getVar('town'),
+                'county' => $this->request->getVar('county'),
+                'maritalstatus' => $this->request->getVar('status'),          
+                'email' => $this->request->getVar('email')
+            ];
+
+            $model->save($newData);
+            return redirect()->to('/user');
+        }else{
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+    }
 
     public function applyleave(){
         return view('home-section/leaveapplication');

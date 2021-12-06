@@ -1,4 +1,4 @@
-<?php include('../sidebar.php'); ?>
+<?php include(APPPATH.'Views\admin\sidebar.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
