@@ -1,6 +1,35 @@
+<?php
+$db = mysqli_connect('localhost', 'Leo', 'leomugambi23', 'medicing');
+$results_per_page = 10;
+
+// find out the number of results stored in database
+$sql='SELECT * FROM leaves';
+$result = mysqli_query($db, $sql);
+$number_of_results = mysqli_num_rows($result);
+
+// determine number of total pages available
+$number_of_pages = ceil($number_of_results/$results_per_page);
+
+// determine which page number visitor is currently on
+if (!isset($_GET['page'])) {
+  $page = 1;
+} else {
+  $page = $_GET['page'];
+}
+
+// determine the sql LIMIT starting number for the results on the displaying page
+$this_page_first_result = ($page-1)*$results_per_page;
+
+$result = mysqli_query($db, $sql);
+
+// retrieve selected results from database and display them on page
+ $sql = "SELECT * FROM `leaves` LIMIT ". $this_page_first_result. ",". $results_per_page;
+
+ 	$result = mysqli_query($db, $sql);
+    // display the links to the pages
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -14,6 +43,36 @@
   <!-- CSS Files -->
   <link href="/css/bootstrap.min.css" rel="stylesheet" />
   <link href="/css/dashboard.css?v=1.5.0" rel="stylesheet" />
+  <style>
+    .pagination{
+      margin: 5px;
+      float: right;
+    }
+    .pagination a{
+      border: solid 1px grey;
+      width: 25px;
+      height: 25px;
+      float: right;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .pagination a:hover{
+      background: #f96332;
+      color: white;
+      border: solid 1px #f96332;
+    }
+    button{
+      background: none;
+      border: solid 1px grey;
+      outline: none;
+      border-radius: 5px;
+    }
+    button:hover{
+      color: white;
+      background: #f96332;
+      border: solid 1px #f96332;
+    }
+  </style>
 </head>
 
 <body class="">
@@ -25,61 +84,10 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Table List</a>
+            <a class="navbar-brand" href>Leave Review</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons location_world"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                  </p>
-                </a>
-              </li>
-            </ul>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">    
           </div>
         </div>
       </nav>
@@ -120,24 +128,41 @@
                       </th>
                     </thead>
                     <tbody>
+                      <?php  while($row = mysqli_fetch_assoc($result)) {?>
                       <tr>
                         <td>
-                          Dakota Rice
+                          <?php echo $row['leave_id']; ?>
                         </td>
                         <td>
-                          Niger
+                        <?php echo $row['staff_number'] ?>
                         </td>
                         <td>
-                          Oud-Turnhout
+                        <?php echo $row['leave_type'] ?>
+                        </td>
+                        <td>
+                        <?php echo $row['start_date'] ?>
+                        </td>
+                        <td>
+                        <?php echo $row['end_date'] ?>
+                        </td>
+                        <td>
+                        <?php echo $row['leave_status'] ?>
                         </td>
                         <td class="text-right">
-                          $36,738
+                          <button value="<?= $row['leave_id']?>"><i class="far fa-eye"></i></button>
                         </td>
                       </tr>
+                      <?php } ?>
                     </tbody>
                   </table>
                 </div>
               </div>
+              <div class="pagination">
+              <?php for ($page=1; $page<=$number_of_pages ; $page++) {
+              echo "<a href='viewTable.php?page=" . $page ."'>" . $page . " </a> ";
+              }
+        ?>
+        </div>
             </div>
             </div>
         </div>

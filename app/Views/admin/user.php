@@ -14,6 +14,11 @@
   <!-- CSS Files -->
   <link href="/css/bootstrap.min.css" rel="stylesheet" />
   <link href="/css/dashboard.css?v=1.5.0" rel="stylesheet" />
+  <style>
+    button:hover{
+      background: #f96332;
+    }
+  </style>
 </head>
 
 <body class="user-profile">
@@ -42,18 +47,18 @@
                 <h5 class="title">Edit Profile</h5>
               </div>
               <div class="card-body">
-                <form>
+                <form method = "post" action = "/Update">
                   <div class="row">
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Department (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $user['departmentname'][0]?>">
+                        <input type="text" class="form-control" disabled placeholder="Company" value="<?php echo $user[0]['departmentname']?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" value="<?php echo $user['email'][0] ?>">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $user[0]['email'] ?>">
                       </div>
                     </div>
                   </div>
@@ -61,7 +66,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="<?php $user['postaddress'][0] ?>">
+                        <input type="text" class="form-control" name="postaddress" placeholder="Home Address" value="<?php echo $user[0]['postaddress'] ?>">
                       </div>
                     </div>
                   </div>
@@ -69,19 +74,19 @@
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="<?php echo $user['town'][0]?>">
+                        <input type="text" class="form-control" name="town" placeholder="City" value="<?php echo $user[0]['town']?>">
                       </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
                         <label>County</label>
-                        <input type="text" class="form-control" placeholder="Country" value="<?php echo $user['county'][0]?>">
+                        <input type="text" class="form-control" name="county" placeholder="County" value="<?php echo $user[0]['county']?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code" value="<?php echo $user['postcode'][0]?>">
+                        <input type="text" class="form-control" name="postcode" placeholder="ZIP Code" value="<?php echo $user[0]['postcode']?>">
                       </div>
                     </div>
                   </div>
@@ -89,7 +94,7 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
-                          <select name="status" class="font form-select form-control" value="<?php $user['maritalstatus'][0]?>">
+                          <select name="status" class="font form-select form-control" value="<?php echo $user[0]['maritalstatus']?>">
                               <option selected disabled>Choose one</option>
                               <option>Married</option>
                               <option>Widowed</option>
@@ -99,9 +104,27 @@
                           </select>
                       </div>
                     </div>
+                    <div class="col-4 mt-2">
+                      <div class="form-group">
+                      <label for="submit" class="font text-dark mt-2 form-label"></label>
+                        <button type="submit" name="id" class="form-control" id="submit" value="<?php echo $user[0]['staff_number']?>">Update</button>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
+              <div class="row position-absolute justify-content-evenly">
+                        <?php if(session()->has('errors')):?>
+                            <div class="alert alert-warning">
+                                <?php
+                                foreach (session('errors') as $error):
+                                    ?>
+                                    <li><?php echo $error ?></li>
+                                <?php
+                                endforeach;?>
+                            </div>
+                        <?php endif;?>
+                    </div>
             </div>
           </div>
     </div>
