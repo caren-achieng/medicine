@@ -47,7 +47,7 @@ $routes->post('/registeremergency', 'UsersController::storeemergency');
 $routes->get('/password', 'UsersController::registerpassword');
 $routes->post('/registerpassword', 'UsersController::storepass');
 $routes->get('/login', 'UserLogin::index');
-$routes->get('/leaveapplication', 'UsersController::applyleave');
+$routes->get('/leaveapplication', 'LeaveController::index');
 $routes->get('/dashboard', 'AdminDashboard::initialize_dashboard');
 $routes->get('/users', 'AdminDashboard::users');
 $routes->get('/user', 'AdminDashboard::user');
