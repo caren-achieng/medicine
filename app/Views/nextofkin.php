@@ -24,31 +24,23 @@
     </style>
 </head>
 <body>
-<div class="panel-header panel-header-sm">
-</div>
-<div class="main-panel" id="main-panel">
-    <div class="container form position-relative ">
-        <div class="row position-absolute justify-content-evenly">
-            <?php if(session()->has('errors')):?>
-                <div class="alert alert-warning">
-                    <?php
-                    foreach (session('errors') as $error):
-                        ?>
-                        <li><?php echo $error ?></li>
-                    <?php
-                    endforeach;?>
-                </div>
-            <?php endif;?>
-        </div>
+<div class="wrapper">
+    <div class="main-panel" id="main-panel">
+        <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
+            </div>
+        </nav>
+        <!--    <div class="container form position-relative ">-->
+
+        <div class="panel-header panel-header-sm"></div>
         <div class="content">
-            <div class="row"></div>
-        </div>
-        <div class="col-md-12">
-            <div class="card ">
-                <div class="card-body">
+            <div class="col-md-12">
+                <div class="card ">
+                    <div class="card-body">
                     <form id="self_registration" class="row g-2" method="post" action="/registernok">
                         <div class="row">
-                            <h1 class="fonts mt-4 text-dark text-center">Next of Kin Details</h1>
+                            <h1 class="mt-4 text-dark fs-3 text-center">Next of Kin Details</h1>
                             <div class="col-8 ">
                                 <label for="nokname" class="font text-dark mt-2 form-label">Person 1: Name</label>
                                 <input type="text" class="font form-control" name="nokname">
@@ -72,9 +64,22 @@
                         </div>
                     </form>
                 </div>
+                    <div class="row position-absolute justify-content-evenly">
+                        <?php if(session()->has('errors')):?>
+                            <div class="alert alert-warning">
+                                <?php
+                                foreach (session('errors') as $error):
+                                    ?>
+                                    <li><?php echo $error ?></li>
+                                <?php
+                                endforeach;?>
+                            </div>
+                        <?php endif;?>
+                    </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

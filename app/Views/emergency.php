@@ -24,31 +24,25 @@
     </style>
 </head>
 <body>
-<div class="panel-header panel-header-sm">
-</div>
+<div class="wrapper">
+
 <div class="main-panel" id="main-panel">
-    <div class="container form position-relative ">
-        <div class="row position-absolute justify-content-evenly">
-            <?php if(session()->has('errors')):?>
-                <div class="alert alert-warning">
-                    <?php
-                    foreach (session('errors') as $error):
-                        ?>
-                        <li><?php echo $error ?></li>
-                    <?php
-                    endforeach;?>
-                </div>
-            <?php endif;?>
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
         </div>
+    </nav>
+<!--    <div class="container form position-relative ">-->
+
+    <div class="panel-header panel-header-sm">
+    </div>
         <div class="content">
-            <div class="row"></div>
-        </div>
         <div class="col-md-12">
             <div class="card ">
                 <div class="card-body">
                     <form id="self_registration" class="row g-2" method="post" action="/registeremergency">
                         <div class="row">
-                            <h1 class="fonts mt-4 text-dark">Emergency Contact Details</h1>
+                            <h1 class="mt-4 text-dark fs-3 text-center">Emergency Contact Details</h1>
                             <div class="col-6 ">
                                 <label for="emergencyname" class="font text-dark mt-2 form-label">Person 1: Name</label>
                                 <input type="text" class="font form-control" name="emergencyname">
@@ -74,135 +68,30 @@
                                 <input type="tel" class="font form-control" name="emergencytel2">
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
-                                <button type="submit" class="btn mb-4 top-100 start-50 translate-middle position-absolute">Next</button>
+                                <button type="submit" class="btn mb-4 position-absolute top-50 end-50 translate-middle-y">Next</button>
                             </div>
                         </div>
                     </form>
                 </div>
+                <div class="row position-absolute justify-content-evenly">
+                    <?php if(session()->has('errors')):?>
+                        <div class="alert alert-warning">
+                            <?php
+                            foreach (session('errors') as $error):
+                                ?>
+                                <li><?php echo $error ?></li>
+                            <?php
+                            endforeach;?>
+                        </div>
+                    <?php endif;?>
+                </div>
             </div>
         </div>
-    </div>
+        </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
-
-<script>
-    if ($("#self_registration").length > 0) {
-        $("#self_registration").validate({
-
-            rules: {
-                spousename: {
-                    required: true,
-                    minlength: 1,
-                    maxlength: 20
-                },
-                spousenum: {
-                    required: true,
-                    minlength: 10,
-                    maxlength: 10
-                },
-                spouseemail: {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 50
-                },
-                occupation: {
-                    required: true,
-                    minlength: 1,
-                    maxlength: 50
-                }
-            },
-
-            messages: {
-                spousename: {
-                    required:"Field is required" ,
-                    minlength: "Minimum length 1 characters",
-                    maxlength: "Maximum length 20 characters"
-                },
-                spousenum: {
-                    required: "Field is required",
-                    minlength: "Minimum length 10 characters",
-                    maxlength: "Maximum length 10 characters"
-                },
-                spouseemail: {
-                    required: "Field is required",
-                    minlength: "Minimum length 6 characters",
-                    maxlength: "Maximum length 50 characters"
-                },
-                occupation: {
-                    required: "Field is required",
-                    minlength: "Minimum length 1 characters",
-                    maxlength: "Maximum length 50 characters"
-                }
-            },
-        });
-    }
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
-<script>
-    if ($("#self_registration").length > 0) {
-        $("#self_registration").validate({
-            rules: {
-                nokname: {
-                    required: true,
-                    minlength: 1,
-                    maxlength: 20
-                },
-                noktel: {
-                    required: true,
-                    minlength: 10,
-                    maxlength: 10
-                },
-                nokemail: {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 50
-                }
-            },
-
-            messages: {
-                nokname: {
-                    required:"Field is required" ,
-                    minlength: "Minimum length 1 characters",
-                    maxlength: "Maximum length 20 characters"
-                },
-                noktel: {
-                    required: "Field is required",
-                    minlength:"Minimum length 10 characters",
-                    maxlength:"Maximum length 10 characters"
-                },
-                nokemail: {
-                    required: "Field is required",
-                    minlength: "Minimum length 6 characters",
-                    maxlength: "Maximum length 50 characters"
-                }
-            },
-        })
-    }
-</script>
-</body>
-
-<body>
-<div class="container form position-relative ">
-    <div class="row position-absolute justify-content-evenly">
-        <?php if(session()->has('errors')):?>
-            <div class="alert alert-warning">
-                <?php
-                foreach (session('errors') as $error):
-                    ?>
-                    <li><?php echo $error ?></li>
-                <?php
-                endforeach;?>
-            </div>
-        <?php endif;?>
-    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>

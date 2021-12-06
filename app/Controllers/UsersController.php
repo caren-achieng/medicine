@@ -6,7 +6,6 @@ use App\Models\DepartmentModel;
 use App\Models\SpouseModel;
 use App\Models\NextofKinModel;
 use App\Models\EmergencyContactModel;
-use App\Models\LeaveModel;
 
 class UsersController extends BaseController
 {

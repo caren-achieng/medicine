@@ -24,31 +24,23 @@
     </style>
 </head>
 <body>
-<div class="panel-header panel-header-sm">
-</div>
+<div class="wrapper">
     <div class="main-panel" id="main-panel">
-        <div class="container form position-relative ">
-            <div class="row position-absolute justify-content-evenly">
-                <?php if(session()->has('errors')):?>
-                    <div class="alert alert-warning">
-                        <?php
-                        foreach (session('errors') as $error):
-                            ?>
-                            <li><?php echo $error ?></li>
-                        <?php
-                        endforeach;?>
-                    </div>
-                <?php endif;?>
+        <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
             </div>
-            <div class="content">
-                <div class="row"></div>
-            </div>
+        </nav>
+        <!--    <div class="container form position-relative ">-->
+
+        <div class="panel-header panel-header-sm"></div>
+        <div class="content">
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-body">
                         <form id="self_registration" class="row g-2" method="post" action="/register">
                             <div class="row">
-                                <h1 class="fonts mt-4 text-center text-dark">Self Registration</h1>
+                                <h1 class="mt-4 text-dark fs-3 text-center">Self Registration</h1>
                                     <div class="col-3">
                                         <label for="id" class=" font text-dark mt-2 form-label">ID/Passport number</label>
                                         <input type="text" class=" font form-control" name="id">
@@ -867,8 +859,8 @@
                                             <label for="role" class="font text-dark mt-2 form-label">Role</label>
                                             <select name="role" class="font form-select">
                                                 <option selected></option>
-                                                <option value="1">Admin</option>
-                                                <option value="2">Employee</option>
+                                                <option value="1">Employee</option>
+                                                <option value="2">Admin</option>
                                             </select>
                                         </div>
                             </div>
@@ -879,10 +871,24 @@
                             </div>
                         </form>
                     </div>
+                    <div class="row position-absolute justify-content-evenly">
+                        <?php if(session()->has('errors')):?>
+                            <div class="alert alert-warning">
+                                <?php
+                                foreach (session('errors') as $error):
+                                    ?>
+                                    <li><?php echo $error ?></li>
+                                <?php
+                                endforeach;?>
+                            </div>
+                        <?php endif;?>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>

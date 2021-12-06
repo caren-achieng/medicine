@@ -47,13 +47,13 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Department (disabled)</label>
-                        <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $user['departmentname']?>">
+                        <input type="text" class="form-control" disabled="" placeholder="Company" value="<?php echo $user['departmentname'][0]?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" value="<?php echo $user['email'] ?>">
+                        <input type="email" class="form-control" placeholder="Email" value="<?php echo $user['email'][0] ?>">
                       </div>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="<?php $user['postaddress'] ?>">
+                        <input type="text" class="form-control" placeholder="Home Address" value="<?php $user['postaddress'][0] ?>">
                       </div>
                     </div>
                   </div>
@@ -69,19 +69,19 @@
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" placeholder="City" value="<?php echo $user['town']?>">
+                        <input type="text" class="form-control" placeholder="City" value="<?php echo $user['town'][0]?>">
                       </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
                         <label>County</label>
-                        <input type="text" class="form-control" placeholder="Country" value="<?php echo $user['county']?>">
+                        <input type="text" class="form-control" placeholder="Country" value="<?php echo $user['county'][0]?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Postal Code</label>
-                        <input type="number" class="form-control" placeholder="ZIP Code" value="<?php echo $user['postcode']?>">
+                        <input type="number" class="form-control" placeholder="ZIP Code" value="<?php echo $user['postcode'][0]?>">
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
-                          <select name="status" class="font form-select form-control" value="<?php $user['maritalstatus']?>">
+                          <select name="status" class="font form-select form-control" value="<?php $user['maritalstatus'][0]?>">
                               <option selected disabled>Choose one</option>
                               <option>Married</option>
                               <option>Widowed</option>

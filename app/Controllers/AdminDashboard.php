@@ -31,6 +31,7 @@ class AdminDashboard extends BaseController
         $model = new UserModel();
         // $data['user'] = $model->getWhere(['staff_number'=> $user_id])->getResult();
         $data['user'] = json_decode(json_encode($model->join('departments', 'departments.departmentid = users.department')->getWhere(['staff_number' => $user_id])->getResult()), true);
+
         echo view('admin/user', $data);
     }
     public function users()
