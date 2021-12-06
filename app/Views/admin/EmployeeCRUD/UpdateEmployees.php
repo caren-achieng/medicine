@@ -37,12 +37,13 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-body">
-                        <form id="self_registration" class="row g-2" method="post" action="/update">
+                        <form id="self_registration" class="row g-2" method="post" action="/UpdateEmployee">
                             <div class="row">
                                 <h1 class="mt-4 text-dark fs-3 text-center">Edit Employee Data</h1>
                                 <div class="col-3">
                                     <label for="id" class=" font text-dark mt-2 form-label">ID/Passport number</label>
                                     <input type="text" class=" font form-control" name="id" disabled value="<?= $employee[0]['id/passport'] ?>">
+                                    <input type="hidden" value="<?= $employee[0]['staff_number'] ?>" name="id">
                                 </div>
                                 <div class="col-3">
                                     <label for="title" class="font text-dark mt-2 form-label">Courtesy Title</label>
@@ -726,7 +727,7 @@
                                 <div class="col-3">
                                     <label for="county" class="font text-dark mt-2 form-label">Home County</label>
                                     <select name="homecounty" class="font form-select form-control">
-                                        <option selected> <?= $employee[0]['id/passport'] ?> </option>
+                                        <option selected> <?= $employee[0]['county'] ?> </option>
                                         <option value="Baringo">Baringo</option>
                                         <option value="Bomet">Bomet</option>
                                         <option value="Bungoma">Bungoma</option>
@@ -780,7 +781,7 @@
                                 <div class="col-3">
                                     <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
                                     <select name="status" class="font form-select form-control" >
-                                        <option selected> <?= $employee[0]['id/passport'] ?> </option>
+                                        <option selected> <?= $employee[0]['maritalstatus'] ?> </option>
                                         <option>Married</option>
                                         <option>Widowed</option>
                                         <option>Separated</option>
@@ -848,7 +849,7 @@
                                 <div class="col-3">
                                     <label for="department" class="font text-dark mt-2 form-label">Department</label>
                                     <select name="department" class="font form-select form-control" >
-                                        <option selected><?= $employee[0]['departmentname'] ?></option>
+                                        <option selected value="<?= $employee[0]['departmentid'] ?>"> <?= $employee[0]['departmentname'] ?></option>
                                         <?php foreach($departments as $department){
                                             echo "<option value=".$department["departmentid"].">".$department["departmentname"]."</option>";
                                         } ?>
@@ -857,7 +858,13 @@
                                 <div class="col-3 ">
                                     <label for="role" class="font text-dark mt-2 form-label">Role</label>
                                     <select name="role" class="font form-select form-control">
-                                        <option selected>
+                                        <option selected value="<?php if ($employee[0]['role']==1){
+                                            echo"1";
+                                        }
+                                        else {
+                                            echo"2";
+                                        }
+                                        ?>">
                                             <?php if ($employee[0]['role']==1){
                                             echo"Employee";
                                             }
@@ -873,7 +880,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
-                                    <button type="submit" class="btn mb-4 button top-50 start-50 translate-middle position-absolute">Next</button>
+                                    <button type="submit" class="btn mb-4 button top-50 start-50 translate-middle position-absolute">Update</button>
                                 </div>
                             </div>
                         </form>
