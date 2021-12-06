@@ -52,6 +52,9 @@ $routes->get('/dashboard', 'AdminDashboard::initialize_dashboard');
 $routes->get('/users', 'AdminDashboard::users');
 $routes->get('/user', 'AdminDashboard::user');
 $routes->get('/ReadEmployees', 'AdminsController::ReadEmployees');
+$routes->get('ReadEmployees/UpdateEmployees/(:num)','AdminsController::edit/$1');
+$routes->get('clients/delete/(:num)','Admin::delete/$1');
+$routes->post('client/update/(:num)','Admin::update/$1');
 
 
 

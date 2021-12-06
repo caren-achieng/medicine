@@ -14,14 +14,14 @@ class AdminsController extends BaseController
         $employees = new UserModel();
         $data['employees'] = json_decode(json_encode($employees->whereIn('role', [1])->paginate()),true);
         $data['pager'] = $employees->pager;
-        return view('admin/EmployeeCRUD/ReadEmployees');
+        return view('admin/EmployeeCRUD/ReadEmployees', $data);
     }
 
     public function admins()
     {
-        $clients = new UserModel();
-        $data['clients'] = json_decode(json_encode($clients->whereIn('role', [2])->paginate()),true);
-        $data['pager'] = $clients->pager;
+        $admins= new UserModel();
+        $data['admins'] = json_decode(json_encode($admins->whereIn('role', [2])->paginate()),true);
+        $data['pager'] = $admins->pager;
         echo view('admin/header');
         echo view('admin/css');
         echo view('admin/navtop');
@@ -33,15 +33,11 @@ class AdminsController extends BaseController
 
     public function edit($id)
     {
-        $client = new UserModel();
-        $data['client'] = $client->find($id);
-        echo view('admin/header');
-        echo view('admin/css');
-        echo view('admin/navtop');
-        echo view('admin/navleft');
-        echo view('admin/edit',$data);
-        echo view('admin/footer');
-        echo view('admin/htmlclose');
+        $department = new DepartmentModel();
+        $data['departments']=$department->findAll();
+        $employee = new UserModel();
+        $data['employee'] = $employee->find($id);
+        return view('admin/EmployeeCRUD/UpdateEmployees',$data);
     }
 
     public function update($id)
