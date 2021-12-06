@@ -37,17 +37,17 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-body">
-                        <form id="self_registration" class="row g-2" method="post" action="/register">
+                        <form id="self_registration" class="row g-2" method="post" action="/update">
                             <div class="row">
                                 <h1 class="mt-4 text-dark fs-3 text-center">Edit Employee Data</h1>
                                 <div class="col-3">
                                     <label for="id" class=" font text-dark mt-2 form-label">ID/Passport number</label>
-                                    <input type="text" class=" font form-control" name="id" disabled value="<?= $employee['id/passport'] ?>">
+                                    <input type="text" class=" font form-control" name="id" disabled value="<?= $employee[0]['id/passport'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="title" class="font text-dark mt-2 form-label">Courtesy Title</label>
                                     <select name="title" class="font form-select form-control">
-                                        <option selected disabled><?= $employee['title'] ?></option>
+                                        <option selected><?= $employee[0]['title'] ?></option>
                                         <option>Mr.</option>
                                         <option>Mrs.</option>
                                         <option>Ms.</option>
@@ -59,36 +59,36 @@
                                 </div>
                                 <div class="col-3">
                                     <label for="fname" class=" font text-dark mt-2 form-label">First Name</label>
-                                    <input type="text" class=" font form-control" name="fname" disabled value="<?= $employee['fname'] ?>">
+                                    <input type="text" class=" font form-control" name="fname" disabled value="<?= $employee[0]['fname'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="mname" class=" font text-dark mt-2 form-label">Middle Name</label>
-                                    <input type="text" class=" font form-control" name="mname" disabled value="<?= $employee['mname'] ?>">
+                                    <input type="text" class=" font form-control" name="mname" disabled value="<?= $employee[0]['mname'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="lname" class="font text-dark mt-2 form-label">Last Name</label>
-                                    <input type="text" class="font form-control" name="lname" disabled value="<?= $employee['lname'] ?>">
+                                    <input type="text" class="font form-control" name="lname" disabled value="<?= $employee[0]['lname'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="gender" class="font text-dark mt-2 form-label">Gender</label>
                                     <select name="gender" class="font form-select form-control" disabled>
-                                        <option selected disabled> <?= $employee['gender'] ?> </option>
+                                        <option selected> <?= $employee[0]['gender'] ?> </option>
                                         <option>Female</option>
                                         <option>Male</option>
                                     </select>
                                 </div>
                                 <div class="col-3">
                                     <label for="dob" class="font text-dark mt-2 form-label">Date of Birth</label>
-                                    <input type="date" class="font form-control" name="dob" disabled value="<?= $employee['dob'] ?>">
+                                    <input type="date" class="font form-control" name="dob" disabled value="<?= $employee[0]['dob'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="postaddress" class="font text-dark mt-2 form-label">Postal Address</label>
-                                    <input type="text" class="font form-control" name="postaddress" value="<?= $employee['postaddress'] ?>">
+                                    <input type="text" class="font form-control" name="postaddress" value="<?= $employee[0]['postaddress'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="pcode" class="font text-dark mt-2 form-label">Post Code</label>
                                     <select class="font form-select form-control" name="pcode">
-                                        <option selected disabled> <?= $employee['postcode'] ?> </option>
+                                        <option selected> <?= $employee[0]['postcode'] ?> </option>
                                         <option>AHERO - 40101</option>
                                         <option>AINABKOI - 30101</option>
                                         <option>AKALA - 40139</option>
@@ -721,12 +721,12 @@
                                 </div>
                                 <div class="col-3">
                                     <label for="town" class="font text-dark mt-2 form-label">Town</label>
-                                    <input type="text" class="font form-control" name="town" value="<?= $employee['town'] ?>">
+                                    <input type="text" class="font form-control" name="town" value="<?= $employee[0]['town'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="county" class="font text-dark mt-2 form-label">Home County</label>
                                     <select name="homecounty" class="font form-select form-control">
-                                        <option selected disabled> <?= $employee['id/passport'] ?> </option>
+                                        <option selected> <?= $employee[0]['id/passport'] ?> </option>
                                         <option value="Baringo">Baringo</option>
                                         <option value="Bomet">Bomet</option>
                                         <option value="Bungoma">Bungoma</option>
@@ -780,7 +780,7 @@
                                 <div class="col-3">
                                     <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
                                     <select name="status" class="font form-select form-control" >
-                                        <option selected disabled> <?= $employee['id/passport'] ?> </option>
+                                        <option selected> <?= $employee[0]['id/passport'] ?> </option>
                                         <option>Married</option>
                                         <option>Widowed</option>
                                         <option>Separated</option>
@@ -791,7 +791,7 @@
                                 <div class="col-3">
                                     <label for="religion" class="font text-dark mt-2 form-label">Religion</label>
                                     <select class="font form-select form-control" name="religion">
-                                        <option selected disabled> <?= $employee['religion'] ?> </option>
+                                        <option selected> <?= $employee[0]['religion'] ?> </option>
                                         <option value="African Inland Church">African Inland Church</option>
                                         <option value="Agnostic">Agnostic</option>
                                         <option value="Agnosticism">Agnosticism</option>
@@ -819,36 +819,36 @@
                                 </div>
                                 <div class="col-3">
                                     <label for="residence" class="font text-dark mt-2 form-label">Residence</label>
-                                    <input type="text" class="font form-control" name="residence"  value="<?= $employee['residence'] ?>" >
+                                    <input type="text" class="font form-control" name="residence"  value="<?= $employee[0]['residence'] ?>" >
                                 </div>
                                 <div class="col-3 pd-telephone-input">
                                     <label for="tel" class="font text-dark mt-2 form-label">Home Tel</label>
-                                    <input type="tel" class="font form-control" name="tel"  value="<?= $employee['hometel'] ?>">
+                                    <input type="tel" class="font form-control" name="tel"  value="<?= $employee[0]['hometel'] ?>">
                                 </div>
                                 <div class="col-3 ">
                                     <label for="mobile" class="font text-dark mt-2 form-label">Mobile Number</label>
-                                    <input type="tel" class="font form-control" name="mobile"  value="<?= $employee['mobilenum'] ?>">
+                                    <input type="tel" class="font form-control" name="mobile"  value="<?= $employee[0]['mobilenum'] ?>">
                                 </div>
                                 <div class="col-3 ">
                                     <label for="email" class="font text-dark mt-2 form-label">Personal Email</label>
-                                    <input type="email" class="font form-control" name="email">
+                                    <input type="email" class="font form-control" name="email" value="<?= $employee[0]['email'] ?>">
                                 </div>
                                 <div class="col-3 ">
                                     <label for="kra" class="font text-dark mt-2 form-label">KRA PIN</label>
-                                    <input type="text" class="font form-control" name="kra" disabled>
+                                    <input type="text" class="font form-control" name="kra" disabled value="<?= $employee[0]['krapin'] ?>">
                                 </div>
                                 <div class="col-3 ">
                                     <label for="nhif" class="font text-dark mt-2 form-label">NHIF Card Number</label>
-                                    <input type="text" class="font form-control" name="nhif">
+                                    <input type="text" class="font form-control" name="nhif" value="<?= $employee[0]['nhifpin'] ?>" >
                                 </div>
                                 <div class="col-3 ">
                                     <label for="nssf" class="font text-dark mt-2 form-label">NSSF Card Number</label>
-                                    <input type="text" class="font form-control" name="nssf">
+                                    <input type="text" class="font form-control" name="nssf" value="<?= $employee[0]['nssfpin'] ?>">
                                 </div>
                                 <div class="col-3">
                                     <label for="department" class="font text-dark mt-2 form-label">Department</label>
-                                    <select name="department" class="font form-select">
-                                        <option selected></option>
+                                    <select name="department" class="font form-select form-control" >
+                                        <option selected><?= $employee[0]['departmentname'] ?></option>
                                         <?php foreach($departments as $department){
                                             echo "<option value=".$department["departmentid"].">".$department["departmentname"]."</option>";
                                         } ?>
@@ -856,8 +856,16 @@
                                 </div>
                                 <div class="col-3 ">
                                     <label for="role" class="font text-dark mt-2 form-label">Role</label>
-                                    <select name="role" class="font form-select">
-                                        <option selected></option>
+                                    <select name="role" class="font form-select form-control">
+                                        <option selected>
+                                            <?php if ($employee[0]['role']==1){
+                                            echo"Employee";
+                                            }
+                                            else {
+                                                echo"Admin";
+                                            }
+                                            ?>
+                                        </option>
                                         <option value="1">Employee</option>
                                         <option value="2">Admin</option>
                                     </select>

@@ -52,7 +52,12 @@ $routes->get('/dashboard', 'AdminDashboard::initialize_dashboard');
 $routes->get('/users', 'AdminDashboard::users');
 $routes->get('/user', 'AdminDashboard::user');
 $routes->get('/ReadEmployees', 'AdminsController::ReadEmployees');
+$routes->get('/ReadEmployees/UpdateEmployees/(:num)','AdminsController::edit/$1');
+$routes->post('/ReadEmployees/update/(:num)','AdminsController::update/$1');
+$routes->get('/clients/delete/(:num)','Admin::delete/$1');
 $routes->post('/Update', 'UsersController::updateuser');
+$routes->post('/approval', 'Leave_approval::leave_approval');
+
 
 
 
