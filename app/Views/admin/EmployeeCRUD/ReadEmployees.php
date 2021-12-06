@@ -51,27 +51,27 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead class=" text-primary">
-                                    <th>Staff Number</th>
+                                    <th>Staff ID</th>
                                     <th>ID/Passport</th>
                                     <th>Title</th>
-                                    <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Last Name</th>
+                                    <th>F Name</th>
+                                    <th>M Name</th>
+                                    <th>L Name</th>
                                     <th>DOB</th>
                                     <th>Gender</th>
                                     <th>Email</th>
-                                    <th>Marital Status</th>
+                                    <th>Status</th>
                                     <th>Religion</th>
-                                    <th>Mobile Number</th>
+                                    <th>Mobile</th>
                                     <th>Home Tel</th>
-                                    <th>KRA PIN Num</th>
-                                    <th>NHIF PIN Num</th>
-                                    <th>NSSF PIN Num</th>
-                                    <th>Postal Address</th>
+                                    <th>KRA PIN</th>
+                                    <th>NHIF PIN</th>
+                                    <th>NSSF PIN</th>
+                                    <th>Post Address</th>
                                     <th>Post Code</th>
                                     <th>Residence</th>
                                     <th>Town</th>
-                                    <th>Home County</th>
+                                    <th>County</th>
                                     <th>Department</th>
                                     <th>Action</th>
                                     </thead>
@@ -100,7 +100,7 @@
                                             <td><?= $row['residence'] ?></td>
                                             <td><?= $row['town'] ?></td>
                                             <td><?= $row['county'] ?></td>
-                                            <td><?= $row['department'] ?></td>
+                                            <td><?= $row['departmentname'] ?></td>
                                             <td>
                                                 <a href="<?= base_url('ReadEmployees/UpdateEmployees/'.$row['staff_number'])?>" class="btn btn-success btn-sm">Edit</a>
                                                 <a href="<?= base_url('ReadEmployees/DeleteEmployees/'.$row['staff_number'])?>" class="btn btn-danger btn-sm">Delete</a>
