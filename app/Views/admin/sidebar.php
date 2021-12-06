@@ -10,7 +10,7 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <i class="fas fa-hospital-symbol"></i>
               <p>Dashboard</p>
             </a>
@@ -34,20 +34,20 @@
                 </a>
             </li>
           <li>
-            <a href="./icons.html">
+            <a href="#">
               <i class="fas fa-door-open"></i>
               <p>Leaves</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="/users">
               <i class="far fa-list-alt"></i>
               <p>Users</p>
             </a>
           </li>
 
           <li>
-            <a href="./user.html">
+            <a href="/user">
               <i class="fas fa-user"></i>
               <p>User Profile</p>
             </a>
