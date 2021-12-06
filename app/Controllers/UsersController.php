@@ -216,7 +216,8 @@ class UsersController extends BaseController
         }
     }
 
-    public function applyleave(){
+    public function applyleave()
+    {
         return view('home-section/leaveapplication');
     }
 }

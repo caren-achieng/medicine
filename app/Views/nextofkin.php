@@ -68,7 +68,6 @@
                         <div class="row">
                             <div class="col-12 ml-5 col-sm8- offset-sm-2 offset-md-5 pt-4 from-wrapper">
                                 <button type="submit" class="btn mb-4 top-100 start-50 translate-middle position-absolute">Next</button>
-
                             </div>
                         </div>
                     </form>
