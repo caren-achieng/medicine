@@ -11,12 +11,9 @@ class AdminsController extends BaseController
 {
     public function ReadEmployees()
     {
-        $department = new DepartmentModel();
-        $data['departments']=$department->findAll();
         $employees = new UserModel();
-        $data['employees'] = json_decode(json_encode($employees->whereIn('role', [1])->paginate()),true);
+        $data['employees'] = json_decode(json_encode($employees->join('departments','departments.departmentid=users.department')->whereIn('role', [1])->whereIn('is_deleted',[0])->paginate()),true);
         $data['pager'] = $employees->pager;
-        $data['employees'] = json_decode(json_encode($employees->join('departments', 'departments.departmentid = users.department')->()), true);
         return view('admin/EmployeeCRUD/ReadEmployees', $data);
     }
 
@@ -43,81 +40,37 @@ class AdminsController extends BaseController
         return view('admin/EmployeeCRUD/UpdateEmployees',$data);
     }
 
-    public function storeusers()
+    public function update()
     {
-        $rules = [
-            'title' => 'required',
-            'postaddress' => 'min_length[5]|max_length[9]',
-            'pcode' => 'required',
-            'town' => 'min_length[3]|max_length[20]',
-            'homecounty' => 'required',
-            'religion' => 'required',
-            'residence' => 'required|max_length[50]',
-            'tel' => 'required|min_length[10]|max_length[10]|is_unique[users.hometel]',
-            'mobile' => 'required|min_length[10]|max_length[10]|is_unique[users.mobilenum]',
-            'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
-            'nhif' => 'required|max_length[20]|is_unique[users.nhifpin]',
-            'nssf' => 'required|max_length[20]|is_unique[users.nssfpin]',
-            'department' => 'required',
-            'status' => 'required',
-            'role'=>'required'
-        ];
-
-        if ($this->validate($rules)) {
-            //store user in DB
-            $model = new UserModel();
-            $newData = [
-                'title' => $this->request->getVar('title'),
-                'postaddress' => $this->request->getVar('postaddress'),
-                'postcode' => $this->request->getVar('pcode'),
-                'town' => $this->request->getVar('town'),
-                'county' => $this->request->getVar('homecounty'),
-                'maritalstatus' => $this->request->getVar('status'),
-                'religion' => $this->request->getVar('religion'),
-                'residence' => $this->request->getVar('residence'),
-                'mobilenum' => $this->request->getVar('mobile'),
-                'hometel' => $this->request->getVar('tel'),
-                'email' => $this->request->getVar('email'),
-                'nhifpin' => $this->request->getVar('nhif'),
-                'nssfpin' => $this->request->getVar('nssf'),
-                'department' => $this->request->getVar('department'),
-                'role'=> $this->request->getVar('role')
-            ];
-
-            $model->save($newData);
-            $number =  (string) $this->request->getVar('tel');
-            $data = $model->where('hometel', $this->request->getVar('tel'))
-                ->first();
-            session()->set($data);
-
-            return redirect()->to('/spouse');
-
-        }
-        else {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-    }
-
-
-    public function update($id)
-    {
-        $client = new UserModel();
+        $employee = new UserModel();
         $data = [
-            'first_name'     => $this->request->getVar('first_name'),
-            'last_name'    => $this->request->getVar('last_name'),
-            'email'    => $this->request->getVar('email'),
-            'password' => $this->request->getVar('password'),
-            'gender'    => $this->request->getVar('gender'),
-            'role'=> 1
+            'title' => $this->request->getVar('title'),
+            'postaddress' => $this->request->getVar('postaddress'),
+            'postcode' => $this->request->getVar('pcode'),
+            'town' => $this->request->getVar('town'),
+            'county' => $this->request->getVar('homecounty'),
+            'maritalstatus' => $this->request->getVar('status'),
+            'religion' => $this->request->getVar('religion'),
+            'residence' => $this->request->getVar('residence'),
+            'mobilenum' => $this->request->getVar('mobile'),
+            'hometel' => $this->request->getVar('tel'),
+            'email' => $this->request->getVar('email'),
+            'nhifpin' => $this->request->getVar('nhif'),
+            'nssfpin' => $this->request->getVar('nssf'),
+            'department' => $this->request->getVar('department'),
+            'role'=> $this->request->getVar('role')
         ];
-        $client->update($id,$data);
-        return redirect()->to(base_url('clients'))->with('status','Data Updated Successfully');
+        $id = $this->request->getVar('id');
+        $employee->update($id,$data);
+        return redirect()->to(base_url('/ReadEmployees'))->with('status','Data Updated Successfully');
     }
 
     public function delete($id){
-        $client = new UserModel();
-        $client->delete($id);
-        return redirect()->to(base_url('clients'))->with('status','Data Deleted Successfully');
+      $data = ['is_deleted'=>1];
+      $employee = new UserModel();
+      $employee->update($id, $data);
+
+      return redirect()->to(base_url('/ReadEmployees'))->with('status','Data Deleted Successfully');
     }
 }
 

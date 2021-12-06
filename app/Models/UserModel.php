@@ -12,6 +12,6 @@ class UserModel extends Model{
         'age','postaddress','postcode','town',
         'county','maritalstatus','religion',
         'residence','mobilenum','hometel','email',
-        'krapin','nhifpin','nssfpin','gender', 'department','password','role'];
+        'krapin','nhifpin','nssfpin','gender', 'department','password','role','is_deleted'];
 
 }
