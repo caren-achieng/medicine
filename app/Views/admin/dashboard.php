@@ -62,7 +62,7 @@ ul.pagination{
               </div>
               <div class="card-body ">
                 <div class="table-full-width table-responsive">
-                  <table class="table">
+                <table class="table">
                     <thead class=" text-primary">
                       <th>
                         Name
@@ -75,6 +75,9 @@ ul.pagination{
                       </th>
                       <th class="text-right">
                          Department
+                      </th>
+                      <th>
+                        Actions
                       </th>
                     </thead>
                     <tbody>
@@ -92,6 +95,19 @@ ul.pagination{
                         <td class="text-right">
                           <?php echo $admin['departmentname'] ?>
                         </td>
+                        <td>
+                          <!---I've added buttons to go to update and to delete so once the icon is clicked--->
+                        <div class="button">
+                            <!--not finished-->
+                            <a href="#">
+                                <button type="button" class="btn btn-success">Update<i class="fas fa-user-edit"></i></button>
+                            </a>
+                            <!--finished-->
+                            <a href="/admin/delete/<?=$admin['staff_number']?>">
+                                <button type="button" class="btn btn-danger">Delete<i class="fas fa-trash-alt"></i></button>
+                            </a>
+                        </div>
+                      </td>
                       </tr>
                       <?php } ?>
                     </tbody>
