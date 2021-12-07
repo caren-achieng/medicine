@@ -36,17 +36,6 @@
 </head>
 
 <body>
-    <!-- <nav>
-        <div class="w-full bg-blue-400 text-white flex flex-row justify-between p-4">
-            <div>
-                <h1 class="text-2xl font-semibold bg-white p-4 uppercase text-blue-400">
-                    Medicing
-                </h1>
-            </div>
-        </div>
-    </nav> -->
-
-
 
     <div class="flex justify-center items-center bg-grad w-full py-6 select-none">
 
@@ -56,26 +45,31 @@
 
             <?php
             if (isset($diff)) { ?>
-                <div class="w3-display-container w3-container w3-red w3-section w-full">
-                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
+                    <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
+                    </span>
                     <h3>Leave Application</h3>
-                    <p>Error: Difference between the two dates is less than 1</p>
+                    <small>Error: Difference between the two dates is less than 1</small>
                 </div>
             <?php }
 
             if (isset($negative)) { ?>
-                <div class="w3-display-container w3-container w3-red w3-section w-full">
-                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
+                    <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
+                    </span>
                     <h3>Leave Application Failed</h3>
-                    <p>Error: You have applied for excess leave days!</p>
+                    <small>Error: You have applied for excess leave days!</small>
                 </div>
             <?php }
 
             if (isset($validation)) { ?>
-                <div class="w3-display-container w3-container w3-red w3-section w-full">
-                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+                <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
+                    <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
+                    </span>
                     <h3>Input Error(s)</h3>
-                    <?= $validation->listErrors() ?>
+                    <small>
+                        <?= $validation->listErrors() ?>
+                    </small>
                 </div>
             <?php } ?>
 
@@ -253,8 +247,7 @@
     }
 
     function back() {
-        var previousUrl = document.referrer;
-        window.location.href = previousUrl;
+        window.location.href = 'http://localhost:8080/index.php/ClientDashboard';
     }
 </script>
 

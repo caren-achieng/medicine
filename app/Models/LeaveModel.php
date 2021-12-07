@@ -21,4 +21,12 @@ class LeaveModel extends Model
     {
         $this->insert($details);
     }
+
+    public function leaveHistory(int $staff_id = null)
+    {
+        if ($staff_id != null)
+            return $this->select('leave_id, leave_type, start_date, end_date, leave_status')->where('staff_number', $staff_id)->get()->getResultArray();
+
+        return $this->findAll();
+    }
 }

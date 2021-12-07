@@ -18,8 +18,8 @@ class UserModel extends Model
         'krapin', 'nhifpin', 'nssfpin', 'gender', 'department', 'password', 'role'
     ];
 
-    public function gender(int $id)
+    public function gender(int $staff_id)
     {
-        return $this->where('staff_number', $id)->first()['gender'];
+        return $this->where('staff_number', $staff_id)->first()['gender'];
     }
 }
