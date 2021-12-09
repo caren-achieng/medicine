@@ -20,6 +20,7 @@
     </style>
     <script>
         $(function() {
+            changeLeave()
             $.ajax({
                 url: 'http://localhost:8080/LeaveController/gender',
                 success: function(result) {
@@ -142,7 +143,7 @@
                             </label>
                         </div>
                         <div class="my-1">
-                            <input type="date" name="startDate" id="startDate" class="w-full p-2 rounded border-2 border-gray-400" onchange="autoDate($('#startDate').val())">
+                            <input type="date" name="startDate" id="startDate" class="w-full p-2 rounded border-2 border-gray-400" onchange="autoDate($('#leaveType').val())">
                         </div>
                     </div>
                     <div class="flex flex-col w-1/4 my-2">

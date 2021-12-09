@@ -47,18 +47,18 @@ $routes->post('/registeremergency', 'UsersController::storeemergency');
 $routes->get('/password', 'UsersController::registerpassword');
 $routes->post('/registerpassword', 'UsersController::storepass');
 $routes->get('/login', 'UserLogin::index');
-$routes->get('/leaveapplication', 'LeaveController::index');
+$routes->get('/apply', 'LeaveController::index');
 $routes->get('/dashboard', 'AdminDashboard::initialize_dashboard');
 $routes->get('/users', 'AdminDashboard::users');
 $routes->get('/user', 'AdminDashboard::user');
 $routes->get('/ReadEmployees', 'AdminsController::ReadEmployees');
-$routes->get('/ReadEmployees/UpdateEmployees/(:num)','AdminsController::edit/$1');
-$routes->post('/ReadEmployees/update/(:num)','AdminsController::update/$1');
-$routes->get('/ReadEmployees/DeleteEmployees/(:num)','AdminsController::delete/$1');
+$routes->get('/ReadEmployees/UpdateEmployees/(:num)', 'AdminsController::edit/$1');
+$routes->post('/ReadEmployees/update/(:num)', 'AdminsController::update/$1');
+$routes->get('/ReadEmployees/DeleteEmployees/(:num)', 'AdminsController::delete/$1');
 $routes->post('/UpdateEmployee', 'AdminsController::update');
 $routes->post('/approval', 'Leave_approval::leave_approval');
 $routes->post('/Update', 'UsersController::updateuser');
-$routes->get('/admin/delete/(:num)','AdminDashboard::deleteUser/$1');
+$routes->get('/admin/delete/(:num)', 'AdminDashboard::deleteUser/$1');
 $routes->add('/dashboard', 'AdminDashboard::initialize_dashboard');
 
 

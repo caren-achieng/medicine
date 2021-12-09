@@ -12,7 +12,7 @@ class LeaveController extends BaseController
     public function index()
     {
         session();
-        return view('home-section/leaveapplication', $_SESSION);
+        return view('home-section/apply', $_SESSION);
     }
 
     private function workingDays($from, $to)
@@ -75,14 +75,12 @@ class LeaveController extends BaseController
 
             if ($this->validate($rules) && $diff > 0 && $balance >= $diff) {
 
-
                 $details = [
                     'staff_number' => $_SESSION['userID'],
                     'leave_type' => $leave_type,
                     'start_date' => $start,
                     'end_date' => $end
                 ];
-
 
                 $leave->createLeave($details);
                 $leave_days->newBalance($leave_type, $_SESSION['userID'], $diff);
