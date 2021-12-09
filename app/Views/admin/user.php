@@ -36,7 +36,6 @@
           <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
         </div>
       </nav>
-      <!-- End Navbar -->
       <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
@@ -47,7 +46,7 @@
                 <h5 class="title">Edit Profile</h5>
               </div>
               <div class="card-body">
-                <form method = "post" action = "/Update">
+                <form method = "post" action = "/Update" name="edit-form">
                   <div class="row">
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
@@ -91,7 +90,7 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-4 pl-1">
+                    <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label for="status" class="font text-dark mt-2 form-label">Marital Status</label>
                           <select name="status" class="font form-select form-control">
@@ -134,15 +133,80 @@
   <script src="/js/core/popper.min.js"></script>
   <script src="/js/core/bootstrap.min.js"></script>
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-  <!-- Chart JS -->
+
   <script src="/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
+
   <script src="/js/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+
   <script src="/js/demo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+
+  <script>
+$(function() {
+  $("form[name = 'edit-form']").validate({
+
+    rules: {
+
+      email: {
+        email: true,
+        required: true,
+        minlength: 11,
+        maxlength: 50,
+      },
+      postaddress: {
+        required: true,
+        minlength: 5,
+        maxlength: 9
+      },
+      postcode: {
+        required:true,
+      },
+      town: {
+        required: true,
+        minlength: 3,
+        maxlength: 20
+      },
+      county:{
+        required: true,
+      },
+      status:{
+        required: true,
+      }
+    },
+    messages: {
+      email: {
+        email: "Invalid email",
+        required: "Field is required",
+        minlength: "Minimum length 11 characters",
+        maxlength: "Maximum length 50 characters",
+      },
+      postaddress: {
+        minlength: "Minimum length 5 characters",
+        maxlength: "Maximum length 9 characters"
+      },
+      postcode: {
+        required: "Field is required",
+      },
+      town: {
+        minlength: "Minimum length 3 characters",
+        maxlength: "Maximum length 20 characters"
+      },
+      county: {
+        required: "Field is required",
+      },
+      status:{
+          required: "Field is required",
+      }
+    },
+    submitHandler: function (form) {
+          form.submit();
+        }
+    });     
+});
+  </script>
 </body>
 
 </html>
