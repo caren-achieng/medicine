@@ -17,7 +17,7 @@
 					x.leave_type = x.leave_type.toLowerCase().replace(/\b[a-z]/g, function(letter) {
 						return letter.toUpperCase()
 					});
-					$('#history-table').append('<tr><td>' + x.leave_id + '</td><td>' + x.leave_type + '</td><td>' + x.start_date + '</td><td>' + x.end_date + '</td><td>' + x.leave_status + '</td></tr>')
+					$('#history-table').append('<tr><td>' + x.leave_type + '</td><td>' + x.start_date + '</td><td>' + x.end_date + '</td><td>' + x.leave_status + '</td></tr>')
 				});
 			}
 
@@ -96,13 +96,10 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th class="th-data2" scope="col">LEAVE ID</th>
-					<!--					<th class="th-data2" scope="col">APPLIER NAME</th>-->
 					<th class="th-data2" scope="col">LEAVE TYPE</th>
 					<th class="th-data2" scope="col">START DATE</th>
 					<th class="th-data2" scope="col">END DATE</th>
 					<th class="th-data2" scope="col">LEAVE STATUS</th>
-
 				</tr>
 			</thead>
 			<tbody id="history-table">

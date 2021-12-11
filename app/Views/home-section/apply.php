@@ -81,7 +81,7 @@
 
             <?php if (isset($_SESSION['created'])) { ?>
                 <?php unset($_SESSION['created'])?>
-                <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
+                <div class="w-11/12 rounded text-green-800 bg-green-200 relative p-4">
                     <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;</span>
                     <h2>Success</h2>
                     <p>Leave Application Successful: Pending Review</p>
