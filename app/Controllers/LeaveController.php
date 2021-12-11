@@ -74,7 +74,7 @@ class LeaveController extends BaseController
             ];
 
             if ($this->validate($rules) && $diff > 0 && $balance >= $diff) {
-
+                echo "if";
                 $details = [
                     'staff_number' => $_SESSION['userID'],
                     'leave_type' => $leave_type,
@@ -85,20 +85,23 @@ class LeaveController extends BaseController
                 $leave->createLeave($details);
                 $leave_days->newBalance($leave_type, $_SESSION['userID'], $diff);
 
-                $data['created'] = 1;
-                echo view('home-section/leaveapplication', $data);
-            } else if (!$this->validate($rules)) {
-
+                $_SESSION["created"] = 1;
+                return redirect()->route('apply');
+            }
+            else if (!$this->validate($rules)) {
                 $data['validation'] = $this->validator;
-                echo view('home-section/leaveapplication', $data);
-            } else if ($balance < $diff) {
-
+                $_SESSION['validation'] = $this->validator;
+                return redirect()->route('apply');
+            }
+            else if ($balance < $diff) {
                 $data['negative'] = 1;
-                echo view('home-section/leaveapplication', $data);
-            } else {
-
+                $_SESSION['negative']=1;
+                return redirect()->route('apply');
+            }
+            else {
                 $data['diff'] = 1;
-                echo view('home-section/leaveapplication', $data);
+                $_SESSION['diff']=1;
+                return redirect()->route('apply');
             }
         }
     }

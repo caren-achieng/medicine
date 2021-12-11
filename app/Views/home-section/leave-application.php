@@ -26,11 +26,14 @@
 		xhttp.open('GET', url, true);
 		xhttp.send();
 	}
+	$(document).ready(function (){
+	   history();
+    });
 </script>
 <div class="container nav-bar">
 	<br><br>
 	<a href="<?= base_url('/apply'); ?>"><button type="button" class="btn btn-success">APPLY</button></a>
-	<button type="button" class="btn btn-success" onclick="history()">History</button>
+	<button type="button" class="btn btn-success">History</button>
 	<br><br>
 	<!-- <div class="containerTable">
 		<h2 class="table-title">LEAVE APPLICATION</h2>

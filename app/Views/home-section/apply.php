@@ -38,23 +38,25 @@
 
 <body>
 
-    <div class="flex justify-center items-center bg-grad w-full py-6 select-none">
+    <div class="flex justify-center items-center bg-grad w-full h-screen py-6 select-none">
 
         <div class="w-11/12 mx-auto rounded h-full bg-gray-100 p-8">
 
             <!-- ERROR MESSAGES-->
 
             <?php
-            if (isset($diff)) { ?>
+            if (isset($_SESSION['diff'])) { ?>
+                <?php unset($_SESSION['diff'])?>
                 <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
                     <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
                     </span>
                     <h3>Leave Application</h3>
                     <small>Error: Difference between the two dates is less than 1</small>
                 </div>
-            <?php }
+            <?php  }
 
-            if (isset($negative)) { ?>
+            if (isset($_SESSION['negative'])) { ?>
+                <?php unset($_SESSION['negative'])?>
                 <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
                     <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
                     </span>
@@ -63,25 +65,28 @@
                 </div>
             <?php }
 
-            if (isset($validation)) { ?>
+            if (isset($_SESSION['validation'])) { ?>
+                <?php unset($_SESSION['validation'])?>
                 <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
                     <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;
                     </span>
                     <h3>Input Error(s)</h3>
                     <small>
-                        <?= $validation->listErrors() ?>
+                        <?= $_SESSION['validation']->listErrors() ?>
                     </small>
                 </div>
             <?php } ?>
 
             <!-- SUCCESS MESSAGE-->
 
-            <?php if (isset($created)) { ?>
-                <div class="w3-display-container w3-container w3-green w3-section w-full">
-                    <span onclick="this.parentElement.style.display='none'" class="w3-button w3-large w3-display-topright">&times;</span>
+            <?php if (isset($_SESSION['created'])) { ?>
+                <?php unset($_SESSION['created'])?>
+                <div class="w-11/12 rounded text-red-800 bg-red-200 relative p-4">
+                    <span onclick="this.parentElement.style.display='none'" class="absolute right-0 top-0 text-4xl cursor-pointer">&times;</span>
                     <h2>Success</h2>
                     <p>Leave Application Successful: Pending Review</p>
                 </div>
+
             <?php } ?>
 
             <div class="header flex flex-row justify-center relative">
