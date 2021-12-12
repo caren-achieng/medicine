@@ -30,62 +30,12 @@
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
-			<li>
-				<a href="#">
-					<i class='bx bx-history'></i>
-					<span class="links_name">Leave History</span>
-				</a>
-			</li>
-			<!-- <li>
-				<a href="#">
-					<i class='bx bxs-calendar' undefined></i>
-					<span class="links_name">My Holidays</span>
-				</a>
-			</li>
-			<li>
-				<a href="<?= site_url("calendar"); ?>">
-					<i class='bx bx-box'></i>
-					<span class="links_name">calendar</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-timer'></i>
-					<span class="links_name">Upcoming Events</span>
-				</a>
-			</li>
-
-			<li>
-				<a href="#">
-					<i class='bx bx-pie-chart-alt-2'></i>
-					<span class="links_name">Analytics</span>
-				</a>
-			</li>
-
-			<li>
-				<a href="#">
-					<i class='bx bx-message'></i>
-					<span class="links_name">Messages</span>
-				</a>
-			</li>
-			<li>
-				<a href="https://mail.google.com/mail/u/0/#inbox">
-					<i class='bx bx-mail-send'></i>
-					<span class="links_name">Email</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bx-heart'></i>
-					<span class="links_name">Leave Tips</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bx-cog'></i>
-					<span class="links_name">Settings</span>
-				</a>
-			</li> -->
+<!--			<li>-->
+<!--				<a href="#">-->
+<!--					<i class='bx bx-history'></i>-->
+<!--					<span class="links_name">Leave History</span>-->
+<!--				</a>-->
+<!--			</li>-->
 			<li class="log_out">
 				<a href="<?= site_url("userlogin/logout"); ?>">
 					<i class='bx bx-log-out'></i>
