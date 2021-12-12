@@ -82,22 +82,18 @@
 
             rules: {
                 spousename: {
-                    required: true,
                     minlength: 1,
                     maxlength: 20
                 },
                 spousenum: {
-                    required: true,
                     minlength: 10,
                     maxlength: 10
                 },
                 spouseemail: {
-                    required: true,
                     minlength: 6,
                     maxlength: 50
                 },
                 occupation: {
-                    required: true,
                     minlength: 1,
                     maxlength: 50
                 }
@@ -105,22 +101,18 @@
 
             messages: {
                 spousename: {
-                    required:"Field is required" ,
                     minlength: "Minimum length 1 characters",
                     maxlength: "Maximum length 20 characters"
                 },
                 spousenum: {
-                    required: "Field is required",
                     minlength: "Minimum length 10 characters",
                     maxlength: "Maximum length 10 characters"
                 },
                 spouseemail: {
-                    required: "Field is required",
                     minlength: "Minimum length 6 characters",
                     maxlength: "Maximum length 50 characters"
                 },
                 occupation: {
-                    required: "Field is required",
                     minlength: "Minimum length 1 characters",
                     maxlength: "Maximum length 50 characters"
                 }
