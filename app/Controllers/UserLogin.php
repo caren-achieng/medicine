@@ -29,7 +29,7 @@ class UserLogin extends BaseController
             if ($pass == $password) {
                 $sessionData = [
                     'userID' => $data['staff_number'],
-                    'userName' => $data['fname'],
+                    'userName' => $data['fname']." ".$data['lname'],
                     'email' => $data['email'],
                     'isSignedIn' => TRUE
                 ];

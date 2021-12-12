@@ -29,6 +29,11 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse justify-content-end" id="navigation"></div>
             </div>
+            <div class="welcome">
+          <a href="/user" class="navbar-brand">
+            Welcome, <?= session()->get('userName')?>
+          </a>
+        </div>
         </nav>
         <!--    <div class="container form position-relative ">-->
 
