@@ -3,6 +3,9 @@
 namespace App\Controllers;
 use App\Models\LeaveModel;
 use App\Models\UserModel;
+use App\Models\EmergencyContactModel;
+use App\Models\NextofKinModel;
+use App\Models\SpouseModel;
 use org\bovigo\vfs\vfsStreamWrapperUnregisterTestCase;
 
 class AdminDashboard extends BaseController
@@ -20,24 +23,14 @@ class AdminDashboard extends BaseController
     {
         echo view('admin/leaves');
     }
-    public function notifications()
-    {
-        echo view('admin/notifications');
-    }
     public function user()
     {
         $session=session();
         $user_id = $session->get('userID');
         $model = new UserModel();
         $data['user'] = json_decode(json_encode($model->join('departments', 'departments.departmentid = users.department')->getWhere(['staff_number' => $user_id])->getResult()), true);
-
         echo view('admin/user', $data);
     }
-    public function users()
-    {
-        echo view('admin/users');
-    }
-
     public static function getMonth(){
         $model = new LeaveModel();
         $leaves = $model -> findAll();
