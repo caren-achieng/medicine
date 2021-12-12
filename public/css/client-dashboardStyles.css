@@ -164,6 +164,7 @@ nav .search-box .bx-search{
   height: 50px;
   min-width: 190px;
   padding: 0 15px 0 2px;
+  text-overflow: hidden ;
 }
 nav .profile-details img{
   height: 40px;
@@ -177,6 +178,7 @@ nav .profile-details .admin_name{
   color: #333;
   margin: 0 10px;
   white-space: nowrap;
+  text-overflow: hidden;
 }
 nav .profile-details i{
   font-size: 25px;

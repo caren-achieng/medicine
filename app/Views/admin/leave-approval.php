@@ -29,7 +29,7 @@
 
 <body class="user-profile">
   <div class="wrapper ">
-    <?php include('sidebar.php') ?>
+    <?php include('sidebar.php')?>
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
@@ -64,7 +64,7 @@
                       <div class="form-group">
                         <label>Staff ID (disabled)</label>
                         <input type="text" class="form-control" name="staff_number" disabled placeholder="ID" value="<?= $staffID ?>">
-                        <input type="hidden" name="leave_id" value="<?= $leaveID?>">
+                        <input type="hidden" name="leave_id" value="<?=$leaveID?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
@@ -78,13 +78,13 @@
                   <div class="col-md-4">
                       <div class="form-group">
                         <label>Department</label>
-                        <input type="text" class="form-control" name="department" placeholder="Home Address" value="<?= $dept?>" readonly>
+                        <input type="text" class="form-control" name="department" placeholder="Home Address" value="<?=$dept?>" readonly>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label>Leave Type</label>
-                        <input type="text" class="form-control"placeholder="City" name="leave_type" value="<?= $leavetype?>" readonly>
+                        <input type="text" class="form-control"placeholder="City" name="leave_type" value="<?=$leavetype?>" readonly>
                       </div>
                     </div>
                     <div class="col-md-4 px-1">

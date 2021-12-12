@@ -22,11 +22,18 @@
                 </a>
             </li>
             <li class="li">
+                <a href="/LeaveReview">
+                    <i class="fas fa-user"></i>
+                    <p>Leave Review</p>
+                </a>
+            </li>
+            <li class="li">
                 <a href="/ReadEmployees">
                     <i class="fas fa-user"></i>
                     <p>View Employees</p>
                 </a>
             </li>
+
             <li class="li">
                 <a href="#">
                     <i class="fas fa-user"></i>
