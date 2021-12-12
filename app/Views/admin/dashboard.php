@@ -47,6 +47,11 @@ ul.pagination{
             <a class="navbar-brand">Dashboard</a>
           </div>
         </div>
+        <div class="welcome">
+          <a href="/user" class="navbar-brand">
+            Welcome, <?= session()->get('userName')?>
+          </a>
+        </div>
       </nav>
       <!-- End Navbar -->
       <div class="panel-header panel-header-lg">

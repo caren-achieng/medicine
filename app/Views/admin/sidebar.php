@@ -40,13 +40,6 @@
             </a>
           </li>
           <li>
-            <a href="/users">
-              <i class="far fa-list-alt"></i>
-              <p>Users</p>
-            </a>
-          </li>
-
-          <li>
             <a href="/user">
               <i class="fas fa-user"></i>
               <p>User Profile</p>

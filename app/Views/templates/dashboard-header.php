@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Medicing Client Dashboard</title>
 	<link rel="stylesheet" href="<?php echo base_url('/css/client-dashboardStyles.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('/css/tableStyles.css'); ?>">
-
+	<!-- <link rel="stylesheet" href="<?php echo base_url('/css/tableStyle.css'); ?>"> -->
+	<!-- <script src="<?= base_url('js/core/jquery.min.js') ?>"></script> -->
 	<!-- Boxicons CDN Link -->
 	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
