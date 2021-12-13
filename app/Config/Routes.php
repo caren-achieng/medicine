@@ -58,8 +58,8 @@ $routes->get('/ReadEmployees/DeleteEmployees/(:num)', 'AdminsController::delete/
 $routes->post('/UpdateEmployee', 'AdminsController::update');
 $routes->post('/approval', 'Leave_approval::leave_approval');
 $routes->post('/Update', 'UsersController::updateuser');
-$routes->get('/admin/delete/(:num)', 'AdminDashboard::deleteUser/$1');
-$routes->add('/dashboard', 'AdminDashboard::initialize_dashboard');
+$routes->get('/admin/delete/(:num)','AdminsController::deleteUser/$1');
+$routes->get('/readadmins', 'AdminsController::readAdmins');
 
 
 /*

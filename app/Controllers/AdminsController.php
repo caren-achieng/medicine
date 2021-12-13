@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\LeaveModel;
 use App\Models\UserModel;
 use App\Models\DepartmentModel;
 use App\Models\SpouseModel;
@@ -71,6 +72,35 @@ class AdminsController extends BaseController
       $employee->update($id, $data);
 
       return redirect()->to(base_url('/ReadEmployees'))->with('status','Data Deleted Successfully');
+    }
+
+    //fuctions for admincrud
+    public function readAdmins()
+    {
+        $admins = new UserModel();
+        $data['admins'] = json_decode(json_encode($admins->join('departments','departments.departmentid=users.department')->whereIn('role', [!1])->whereIn('is_deleted',[0])->paginate()),true);
+        $data['pager'] = $admins->pager;
+        return view('admin/admincrud/readadmin.php', $data);
+    }
+    public function deleteUser($id){
+        $model1=new LeaveModel();
+        $model2=new EmergencyContactModel();
+        $model3=new SpouseModel();
+        $model4=new NextofKinModel();
+        $model5=new UserModel();
+
+        $sql1="DELETE FROM `leaves` WHERE `staff_number`=?";
+        $sql2="DELETE FROM `emergencycontacts` WHERE `staff`=?";
+        $sql3="DELETE FROM `spouses` WHERE `staff`=?";
+        $sql4="DELETE FROM `nextofkin` WHERE `staff`=?";
+        $sql5="DELETE FROM `users` WHERE `staff_number`=?";
+
+        $model1->query($sql1,array($id));
+        $model2->query($sql2,array($id));
+        $model3->query($sql3,array($id));
+        $model4->query($sql4,array($id));
+        $model5->query($sql5,array($id));
+        return redirect()->to('/readadmins')->with('status','admin deleted');
     }
 }
 

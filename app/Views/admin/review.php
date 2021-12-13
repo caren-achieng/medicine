@@ -53,12 +53,9 @@
                     <th scope="col">Start Date</th>
                     <th scope="col">End date</th>
                     <th scope="col">Review</th>
-    
-                   
                 </tr>
            </thead>
               <tbody>
-              
                 <?php foreach($leavesPendingData as $row):?>
                  
                   <tr>
@@ -69,14 +66,9 @@
                         <td><?=$row['end_date']?></td>
                         <td>
                         <a href="/Leave_approval/leavedets/2" ><button type="button" class="btn btn-success">Review</button></a>
-                        
                        </td>
-                        
-                        
                     </tr>
-
                   <?php endforeach;?>
-                
               </tbody>
          </table>
       </div>

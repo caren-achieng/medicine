@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li class="li">
-                <a href="#">
+                <a href="/readadmins">
                     <i class="fas fa-user"></i>
                     <p>View Admins</p>
                 </a>
