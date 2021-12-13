@@ -136,8 +136,35 @@
   <script src="/js/core/popper.min.js"></script>
   <script src="/js/core/bootstrap.min.js"></script>
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
   <script src="/js/demo.js"></script>
+  <script>
+  $(document).ready(function () {
+  $("form").submit(function (event) {
+    var formData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      superheroAlias: $("#superheroAlias").val(),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "process.php",
+      data: formData,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+      console.log(data);
+    });
+
+    event.preventDefault();
+  });
+});
+
+  </script>
 </body>
 
 </html>

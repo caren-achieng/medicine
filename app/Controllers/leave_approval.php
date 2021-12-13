@@ -54,7 +54,7 @@ class Leave_approval extends BaseController
         if($this->request->getVar('approve') == 'Approve'){
             $state=['leave_status'=>'Approved'];
         }else{
-            $state=['leave_status'=>'Denied'];
+            $state=['leave_status'=>'Rejected'];
         }
         $model->update($id,$state);
         $result=$this->leavedets($id);
