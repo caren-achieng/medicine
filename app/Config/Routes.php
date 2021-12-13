@@ -60,6 +60,8 @@ $routes->post('/approval', 'Leave_approval::leave_approval');
 $routes->post('/Update', 'UsersController::updateuser');
 $routes->get('/admin/delete/(:num)', 'AdminDashboard::deleteUser/$1');
 $routes->add('/dashboard', 'AdminDashboard::initialize_dashboard');
+$routes->get('/review', 'LeaveReview::index');
+
 
 
 /*

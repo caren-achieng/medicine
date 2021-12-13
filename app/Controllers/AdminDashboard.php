@@ -19,10 +19,6 @@ class AdminDashboard extends BaseController
         $data['pager2'] = $status->pager;
         echo view('admin/dashboard', $data);
     }
-    public function leaves()
-    {
-        echo view('admin/leaves');
-    }
     public function user()
     {
         $session=session();

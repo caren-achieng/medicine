@@ -31,24 +31,25 @@ class Database extends Config
      * @var array
      */
     public $default = [
-        'DSN'      => '',
-        'hostname' => '127.0.0.1',
-        'username' => 'PeterM',
-        'password' => '4htitn5y',
-        'database' => 'medicing_db',
-        'DBDriver' => 'MySQLi',
-        'DBPrefix' => '',
-        'pConnect' => false,
-        'DBDebug'  => (ENVIRONMENT !== 'production'),
-        'charset'  => 'utf8',
-        'DBCollat' => 'utf8_general_ci',
-        'swapPre'  => '',
-        'encrypt'  => false,
-        'compress' => false,
-        'strictOn' => false,
-        'failover' => [],
-        'port'     => 3307,
-    ];
+		'DSN'      => '',
+		'hostname' => 'localhost',
+		'username' => 'Leo',
+		'password' => 'leomugambi23',
+		'database' => 'ecommerce',
+		'DBDriver' => 'MySQLi',
+		'DBPrefix' => '',
+		'pConnect' => false,
+		'DBDebug'  => (ENVIRONMENT !== 'development'),
+		'charset'  => 'utf8',
+		'DBCollat' => 'utf8_general_ci',
+		'swapPre'  => '',
+		'encrypt'  => false,
+		'compress' => false,
+		'strictOn' => false,
+		'failover' => [],
+		'port'     => 3306,
+	];
+
 
     /**
      * This database connection is used when
