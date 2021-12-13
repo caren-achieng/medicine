@@ -30,12 +30,6 @@
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
-<!--			<li>-->
-<!--				<a href="#">-->
-<!--					<i class='bx bx-history'></i>-->
-<!--					<span class="links_name">Leave History</span>-->
-<!--				</a>-->
-<!--			</li>-->
 			<li class="log_out">
 				<a href="<?= site_url("userlogin/logout"); ?>">
 					<i class='bx bx-log-out'></i>

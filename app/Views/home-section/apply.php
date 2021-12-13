@@ -30,6 +30,7 @@
                         $("option[value='paternity']").remove()
 
                     checkLeaveBalance()
+                    telNo()
                 }
             })
         })
@@ -171,7 +172,7 @@
                             <select name="countryCode" id="countryCode" class="p-2 flex-0">
                                 <option value="+254">+254</option>
                             </select>
-                            <input type="text" name="mobile" id="mobile" class="flex-auto p-2 w-auto focus:border-transparent" placeholder="727143069">
+                            <input type="text" name="mobile" id="mobile" class="flex-auto p-2 w-auto focus:border-transparent" placeholder="727143069" disabled>
                         </div>
                     </div>
                 </div>
@@ -254,6 +255,18 @@
 
     function back() {
         window.location.href = 'http://localhost:8080/index.php/ClientDashboard';
+    }
+
+    function telNo() {
+        $.ajax({
+            url: 'http://localhost:8080/LeaveController/telNo',
+            success: function(result) {
+                $('#mobile').val(result.telNo)
+            },
+            error: function() {
+                $('#mobile').val('727143069')
+            }
+        })
     }
 </script>
 

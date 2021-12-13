@@ -22,4 +22,9 @@ class UserModel extends Model
     {
         return $this->where('staff_number', $staff_id)->first()['gender'];
     }
+
+    public function telNo(int $staff_id)
+    {
+        return $this->where('staff_number', $staff_id)->first()['mobilenum'];
+    }
 }

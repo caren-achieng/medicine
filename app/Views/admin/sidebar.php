@@ -45,6 +45,13 @@
               <p>User Profile</p>
             </a>
           </li>
+
+            <li class="log_out">
+                <a href="<?= site_url("userlogin/logout"); ?>">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Logout</span>
+                </a>
+            </li>
         </ul>
       </div>
     </div>

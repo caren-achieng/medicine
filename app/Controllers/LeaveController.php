@@ -131,4 +131,14 @@ class LeaveController extends BaseController
 
         return $this->response->setJSON([$leaveType => $leaveBalance]);
     }
+
+    public function telNo()
+    {
+        session();
+        $user = new UserModel();
+
+        $telNo = $user->telNo($_SESSION['userID']);
+
+        return $this->response->setJSON(['telNo' => $telNo]);
+    }
 }
