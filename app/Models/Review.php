@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class Review extends Model{
 
-    protected $table = 'medicing';
+    protected $table = 'leaves';
 
     protected $allowedFields = [
         'leave_id',
@@ -14,7 +14,9 @@ class Review extends Model{
         'leave_type',
         'start_date',
         'end_date',
-        'leave_status'
+        'leave_status',
+        'approver_id'
+        
     ];
 
 }
