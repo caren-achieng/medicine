@@ -209,7 +209,7 @@ class UsersController extends BaseController
             ];
 
             $model->update(session()->get('staff_number'),$newData);
-            return redirect()->to('/login');
+            return redirect()->to('/dashboard');
         }
         else {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
