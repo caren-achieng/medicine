@@ -239,7 +239,9 @@ class UsersController extends BaseController
             ];
 
             $model->save($newData);
-            return redirect()->to('/user');
+            $data['message'] = "Update successful";
+            session()->set($data);
+            return redirect()->to('/user',);
         }else{
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }

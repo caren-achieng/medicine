@@ -114,6 +114,14 @@
                         <button type="submit" name="id" class="form-control" id="submit" value="<?php echo $user[0]['staff_number']?>">Update</button>
                       </div>
                     </div>
+                    <div class="col-4 mt-4">
+                    <?php if(session()->has('message')){?>
+                    <div class="alert alert-success rounded-pill" role="alert">
+                          <?= session()->get('message');?>   
+                          <?php session()->remove('message');?>
+                    </div>
+                  <?php } ?>
+                    </div>
                   </div>
                 </form>
               </div>
