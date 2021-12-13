@@ -176,9 +176,6 @@ ul.pagination{
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Chart JS -->
   <script src="/js/plugins/chartjs.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="/js/plugins/bootstrap-notify.js"></script>
-  <script src="/js/demo.js"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
