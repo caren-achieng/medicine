@@ -139,7 +139,6 @@
   <script src="/js/core/bootstrap.min.js"></script>
   <script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 
-  <script src="/js/plugins/chartjs.min.js"></script>
 
   <script src="/js/plugins/bootstrap-notify.js"></script>
 
