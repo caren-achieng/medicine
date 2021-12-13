@@ -142,27 +142,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
   <script src="/js/demo.js"></script>
   <script>
-  $(document).ready(function () {
-  $("form").submit(function (event) {
-    var formData = {
-      name: $("#name").val(),
-      email: $("#email").val(),
-      superheroAlias: $("#superheroAlias").val(),
-    };
+//   $(document).ready(function () {
+//   $("form").submit(function (event) {
+//     var formData = {
+//       name: $("#name").val(),
+//       email: $("#email").val(),
+//       superheroAlias: $("#superheroAlias").val(),
+//     };
 
-    $.ajax({
-      type: "POST",
-      url: "process.php",
-      data: formData,
-      dataType: "json",
-      encode: true,
-    }).done(function (data) {
-      console.log(data);
-    });
+//     $.ajax({
+//       type: "POST",
+//       url: "process.php",
+//       data: formData,
+//       dataType: "json",
+//       encode: true,
+//     }).done(function (data) {
+//       console.log(data);
+//     });
 
-    event.preventDefault();
-  });
-});
+//     event.preventDefault();
+//   });
+// });
 
   </script>
 </body>
