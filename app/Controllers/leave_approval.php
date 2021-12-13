@@ -58,7 +58,7 @@ class Leave_approval extends BaseController
         }
         $model->update($id,$state);
         $result=$this->leavedets($id);
-        return $result;
+        return redirect()->to('/review');
     }
 
 }
