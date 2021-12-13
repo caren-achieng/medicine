@@ -24,6 +24,11 @@
     .btn{
       transform: translateX(100%)
     }
+    .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: white;
+    color: black;
+    cursor: crosshair;
+}
   </style>
 </head>
 
@@ -63,7 +68,7 @@
                     <div class="col-md-2 pr-1">
                       <div class="form-group">
                         <label>Staff ID (disabled)</label>
-                        <input type="text" class="form-control" name="staff_number" disabled placeholder="ID" value="<?= $staffID ?>">
+                        <input type="text" class="form-control" name="staff_number" readonly placeholder="ID" value="<?= $staffID ?>">
                         <input type="hidden" name="leave_id" value="<?= $leaveID?>">
                       </div>
                     </div>
