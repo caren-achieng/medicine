@@ -44,7 +44,6 @@
               <div class="button input-box">
                 <input type="submit" value="Log In">
               </div>
-                <div class="text sign-up-text">Don't have an account? <label><a href="/register">Register</a></label></div>
             </div>
         </form>
 
